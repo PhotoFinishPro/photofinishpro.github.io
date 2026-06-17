@@ -8,8 +8,8 @@ table, th, td {
   border: 1px solid black;
 }
 .crewphoto {
-  height: 20%;
-  width: auto;
+  width: 50%;
+  height: auto;
   display: block;
   padding: 0px !important;
 }
