@@ -38,9 +38,9 @@ ul {
   background-color: #333333;
 }
 
-/*ul li {
+ul li {
   float: left;
-}*/
+}
 
 ul li a {
   display: block;
@@ -52,6 +52,10 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+}
+
+td li {
+1padding: 10px;
 }
 
 /* Slideshow container */
