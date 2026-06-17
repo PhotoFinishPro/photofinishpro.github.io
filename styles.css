@@ -12,6 +12,7 @@ table, th, td {
   width: auto;
   display: block;
   padding: 0px !important;
+}
 .bannerphoto {
   width: 100vw;
   height: auto; /* Maintains original aspect ratio */
