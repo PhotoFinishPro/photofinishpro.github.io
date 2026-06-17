@@ -4,6 +4,14 @@
   box-sizing: border-box;
   font-family: Tahoma, sans-serif;
 }
+table, th, td {
+  border: 1px solid black;
+}
+.crewphoto {
+  height: 20vw;
+  width: auto;
+  display: block;
+  padding: 0px !important;
 .bannerphoto {
   width: 100vw;
   height: auto; /* Maintains original aspect ratio */
