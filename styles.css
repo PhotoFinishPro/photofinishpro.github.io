@@ -48,7 +48,6 @@ ul li a:hover {
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  max-height: 200px;
   position: relative;
   margin: auto;
 }
