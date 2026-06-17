@@ -48,6 +48,7 @@ ul li a:hover {
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
+  max-height: 200px;
   position: relative;
   margin: auto;
 }
@@ -86,7 +87,7 @@ ul li a:hover {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: lightgrey;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
