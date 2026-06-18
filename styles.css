@@ -8,7 +8,7 @@ table, th, td {
   border: 1px solid black;
 }
 table {
-  width: 50%;
+  width: 50vw;
 }
 .crewphoto {
   width: 50%;
