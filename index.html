@@ -4,70 +4,78 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
-    <title>PhotoFinishPro Event Timing</title>
-    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <ul>
-  <li><a href="index.html">Home</a></li>
+  <li><a href="main.html">Home</a></li>
   <li><a href="services.html">Our Services</a></li>
   <li><a href="#contact">Our software</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="crew.html">Our Crew</a></li>
-  <li><a href="pricing.html">Pricing</a></li>
-  <li><a href="https://www.athletic.net/team/100235" target="_blank">AthleticNET</a></li>  
+  <li><a href="#about">About</a></li>
+  <li><a href="https://www.athletic.net/team/100235" target="_blank">Athletic.net</a></li>  
 </ul>
 
 <body>
-    <div class="slideshow-container">
-
-          <!-- Full-width images with number and caption text -->
-          <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="PhotoFinishPro.png" style="width:100%">
-          </div>
-        
-          <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="crew.jpg" style="width:50%">
-            <div class="text">Our Timing Crew</div>
-          </div>
-        
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="finishline.jpg" style="width:50%">
-            <div class="text">Example Setup</div>
-          </div>
-        
-          <!-- Next and previous buttons -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
+    <img class="bannerphoto" src="PhotoFinishPro.png">
+    <div class="carousel-container">
+    <div class="carousel-track">
+        <div class="carousel-slide"><img src="crew.jpg" alt="Slide 1"></div>
+        <div class="carousel-slide"><img src="finishline.jpg" alt="Slide 2"></div>
+        <div class="carousel-slide"><img src="https://t3.ftcdn.net/jpg/01/06/35/10/360_F_106351000_zAKAtrLtqqlUctsca92nlYSMOwHFgl2V.jpg" alt="Slide 3"></div>
+        <div class="carousel-slide"><img src="https://i.etsystatic.com/11631326/r/il/998fa6/1338086653/il_fullxfull.1338086653_l616.jpg" alt="Slide 4"></div>
+        <div class="carousel-slide"><img src="https://thumbs.dreamstime.com/b/running-track-clouds-7135249.jpg" alt="Slide 5"></div>
+        <div class="carousel-slide"><img src="https://picsum.photos" alt="Slide 6"></div>
     </div>
-    <!--<img class="bannerphoto" src="PhotoFinishPro.png">-->
-    <h1>Race Timing in Central Oregon</h1>
-    <p>Professional Meet Timing in Bend, Oregon. We use AthleticLIVE & AthleticRUNMEET with our own software to time running events.</p>
-    <p>Questions? Let's talk at PhotoFinishProTiming@gmail.com.</p>
-    <script>
-        let slideIndex = 0;
-showSlides();
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 7000); // Change image every 2 seconds
-}
+    <button class="carousel-btn prev-btn">&#10094;</button>
+    <button class="carousel-btn next-btn">&#10095;</button>
+    </div>
+
+
+
+    <h1 class="info">Who are we?:</h1>
+    <p class="info">PhotoFinishPro is an athletic timing company based in Bend, Oregon, that specializes in track and cross country timing. Our timing system offers an easy to use interface, while providing accurate results that can be directly uploaded to Athletic.net or Athletic.live.</p>
+    <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = 15; // Must match the CSS gap property
+        
+        // Shift track based on slide width plus spacing gap
+        const amountToMove = currentIndex * (slideWidth + gap);
+        track.style.transform = `translateX(-${amountToMove}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+        // Determine how many items are currently visible on screen
+        const itemsVisible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+        
+        // Prevent scrolling past the last available visible set
+        if (currentIndex < slides.length - itemsVisible) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Optional loop back to start
+        }
+        updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            // Optional loop to the end
+            const itemsVisible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+            currentIndex = slides.length - itemsVisible;
+        }
+        updateCarousel();
+        });
+
+        // Re-calculate math properly if the browser window changes dimensions
+        window.addEventListener('resize', updateCarousel);
     </script>
 </body>
