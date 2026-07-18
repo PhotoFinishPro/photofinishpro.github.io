@@ -127,3 +127,6 @@ td, th {
 tr:nth-child(even) {
   background-color: #adadad;
 }
+.checked {
+  color: orange;
+}
