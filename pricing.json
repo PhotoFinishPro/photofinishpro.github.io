@@ -1,0 +1,83 @@
+{
+    "XC": [
+        {
+            "Packages": [
+                {
+                    "name": "Lite",
+                    "price": 200,
+                    "alt-price": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "One Linescan and One Front Facing Camera<br>Official Results Published After Meet",
+                    "sample": "No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Standard",
+                    "price": 400,
+                    "alt-price": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event",
+                    "sample":"No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Professional",
+                    "price": 590,
+                    "alt-price": "$180 per split location",
+                    "multiple": false,
+                    "split-add": true,
+                    "description": "One Primary and One Backup system, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos",
+                    "sample": "No Sample Meet Available Yet"
+                }
+            ],
+            "AddOns": [
+                {
+                    "name": "Live Results",
+                    "price": 85,
+                    "alt-price": null,
+                    "multiple": false,
+                    "split-add": true,
+                    "description": "Live Results through AthleticLIVE",
+                    "sample":"No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Finish Line Image Export",
+                    "price": 30,
+                    "alt-price": "$10 with Live Results",
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Finish Line Images exported to results.",
+                    "sample": "No Sample Event Available Yet"
+                },
+                {
+                    "name": "Split Location (Requires Live Results)",
+                    "price": 200,
+                    "alt-price": null,
+                    "multiple": true,
+                    "split-add": false,
+                    "description": "Timed splits during races. (Multiple splits can be scored from one location, as long as runners pass this location at the distances needed for the splits).",
+                    "sample": "No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Digital Scoreboard",
+                    "price": 150,
+                    "alt-price": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Full-size scoreboard at finish line, showing event results",
+                    "sample": "No Sample Image Available Yet"
+                },
+                {
+                    "name": "Race Videos",
+                    "price": 0.0,
+                    "alt-price": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.",
+                    "sample": "No Sample Event Available Yet"
+                }
+            ]
+            
+        }
+    ]
+}
