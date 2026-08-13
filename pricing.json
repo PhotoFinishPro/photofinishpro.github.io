@@ -13,10 +13,12 @@
     ],
     "SPORTS": [
         {
-            "name": "XC"
+            "name": "XC",
+            "alt-name": "Cross Country"
         },
         {
-            "name": "TF"
+            "name": "TF",
+            "alt-name": "Track & Field"
         }
     ],
     "XC": [
