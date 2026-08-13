@@ -1,11 +1,30 @@
 {
+    "ALL": [
+        {
+            "name": "Transportation Cost",
+            "price": 6,
+            "alt-price": null,
+            "add-on": null,
+            "multiple": true,
+            "split-add": false,
+            "description": "We charge $6 per every 5 miles that our timer has to travel (estimated during booking).",
+            "sample": null
+        }
+    ],
     "XC": [
         {
+            "Definitions": [
+                {
+                    "splits": "Splits",
+                    "disclaimers": null
+                }
+            ],
             "Packages": [
                 {
                     "name": "Lite",
                     "price": 200,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": false,
                     "split-add": false,
                     "description": "One Linescan and One Front Facing Camera<br>Official Results Published After Meet",
@@ -15,6 +34,7 @@
                     "name": "Standard",
                     "price": 400,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": false,
                     "split-add": false,
                     "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event",
@@ -24,6 +44,7 @@
                     "name": "Professional",
                     "price": 590,
                     "alt-price": "$180 per split location",
+                    "add-on": 180,
                     "multiple": false,
                     "split-add": true,
                     "description": "One Primary and One Backup system, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos",
@@ -35,6 +56,7 @@
                     "name": "Live Results",
                     "price": 85,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": false,
                     "split-add": true,
                     "description": "Live Results through AthleticLIVE",
@@ -44,6 +66,7 @@
                     "name": "Finish Line Image Export",
                     "price": 30,
                     "alt-price": "$10 with Live Results",
+                    "add-on": 10,
                     "multiple": false,
                     "split-add": false,
                     "description": "Finish Line Images exported to results.",
@@ -53,6 +76,7 @@
                     "name": "Split Location (Requires Live Results)",
                     "price": 200,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": true,
                     "split-add": false,
                     "description": "Timed splits during races. (Multiple splits can be scored from one location, as long as runners pass this location at the distances needed for the splits).",
@@ -62,6 +86,7 @@
                     "name": "Digital Scoreboard",
                     "price": 150,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": false,
                     "split-add": false,
                     "description": "Full-size scoreboard at finish line, showing event results",
@@ -71,6 +96,7 @@
                     "name": "Race Videos",
                     "price": 0.0,
                     "alt-price": null,
+                    "add-on": null,
                     "multiple": false,
                     "split-add": false,
                     "description": "Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.",
@@ -78,6 +104,120 @@
                 }
             ]
             
+        }
+    ],
+    "TF": [
+        {
+            "Definitions": [
+                {
+                    "splits": "Enroute",
+                    "disclaimers": "Field Events: Requires event volunteers to score field events. Please contact us if this will be an issue."
+                }
+            ],
+            "Packages": [
+                {
+                    "name": "Lite",
+                    "price": 175,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "One Linescan and One Front Facing Camera<br>Official Results Published After Meet<br>Paper Field Event Scoring",
+                    "sample":"No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Standard",
+                    "price": 350,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Paper Field Event Scoring, unless Live Field Results Package",
+                    "sample":"No Sample Meet Available Yet"
+                },
+                {
+                    "name": "Professional",
+                    "price": 580,
+                    "alt-price": "$180 per enroute location",
+                    "add-on": 180,
+                    "multiple": false,
+                    "split-add": true,
+                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons: Live Track Results, Live Field Results, Enroute Timing, Race Videos, Field Event Videos, Lap Counter, Digital Scoreboard.",
+                    "sample":"No Sample Meet Available Yet"
+                }
+            ],
+            "AddOns": [
+                {
+                    "name": "Live Track Results",
+                    "price": 80,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Live Track Results through AthleticLIVE with splits timed for distance races and relays. Finish Line Images exported for all races.",
+                    "sample": "<a href='https://live.athletic.net/meets/74886?_gl=1*1ltkr3o*_ga*NTk2MTkzNDUxLjE3Njc0NzA5ODE.*_ga_CV6QCFM8SJ*czE3ODE3NDEyMjUkbzEwOSRnMSR0MTc4MTc0MTIyNiRqNTkkbDAkaDA.' target='_blank'>Timer Training 1</a>"
+                },
+                {
+                    "name": "Live Field Results (Requires Live Track Results)",
+                    "price": 30,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Live Attempt-By-Attempt Field Results through AthleticLIVE. Uses AthleticFIELD app.",
+                    "sample":"No Sample Event Available Yet"
+                },
+                {
+                    "name": "Enroute Timing",
+                    "price": 200,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": true,
+                    "split-add": false,
+                    "description": "Enroute timed results for events. Example: 3200m race would have enroute 3000m times.",
+                    "sample":"No Sample Event Available Yet"
+                },
+                {
+                    "name": "Digital Scoreboard",
+                    "price": 150,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Full-size scoreboard at finish line, showing event results",
+                    "sample": "No Sample Image Available Yet"
+                },
+                {
+                    "name": "Lap Counter",
+                    "price": 140,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Digital Sign to show laps left for distance track competitors",
+                    "sample":"No Sample Image Available Yet"
+                },
+                {
+                    "name": "Race Videos",
+                    "price": 0.0,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.",
+                    "sample":"<a href='https://live.athletic.net/meets/75071/events/individual/2850571' target='_blank'>Timer Training 2</a>"
+                },
+                {
+                    "name": "Field Event Videos",
+                    "price": 0.0,
+                    "alt-price": null,
+                    "add-on": null,
+                    "multiple": false,
+                    "split-add": false,
+                    "description": "Attempt-by-Attempt videos for field events, posted to AthleticLIVE and AthleticNET. Requires Live Field Results",
+                    "sample":"No Sample Event Available Yet"
+                }
+            ]
         }
     ]
 }
