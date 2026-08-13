@@ -10,6 +10,8 @@ async function loadJsonFile() {
  
         // Parse the JSON response into a JavaScript object  
         const jsonData = await response.json();  
+            var test = jsonData.TF[0].Packages[0].name;
+            console.log(test)
  
         // Use the data (log to console for testing)  
         console.log('Loaded JSON data:', jsonData);  
@@ -22,5 +24,4 @@ async function loadJsonFile() {
     // Call the function  
     var json = loadJsonFile();
 console.log(json)
-var test = json.TF[0].Packages[0].name;
-console.log(test)
+
