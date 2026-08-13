@@ -15,7 +15,7 @@ async function loadJsonFile() {
             sportsList.push(jsonData.SPORTS[i].name);
       }
             console.log(sportsList);
-            var innerHTMLForSelect = "";
+            var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
                   innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] + "</option>";
             }
