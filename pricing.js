@@ -1,3 +1,3 @@
-import jsonData from './pricing.json' assert {type : 'json'};
+import jsonData from './pricing.json';
 
 console.log(jsonData);
