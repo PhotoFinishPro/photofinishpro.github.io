@@ -12,7 +12,7 @@ async function loadJsonFile() {
         const jsonData = await response.json();  
             var sportsList = [];
       for(var i = 0; i < jsonData.SPORTS.length; i++){
-            sportsList.append(jsonData.SPORTS[i].name);
+            sportsList.push(jsonData.SPORTS[i].name);
       }
             console.log(sportsList);
             var test = jsonData.TF[0].Packages[0].name;
