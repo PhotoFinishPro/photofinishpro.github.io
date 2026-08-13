@@ -10,6 +10,11 @@ async function loadJsonFile() {
  
         // Parse the JSON response into a JavaScript object  
         const jsonData = await response.json();  
+            var sportsList = [];
+      for(var i = 0; i < jsonData.SPORTS.length; i++){
+            sportsList.append(jsonData.SPORTS[i].name);
+      }
+            console.log(sportsList);
             var test = jsonData.TF[0].Packages[0].name;
             console.log(test)
  
@@ -22,6 +27,5 @@ async function loadJsonFile() {
     }  
  
     // Call the function  
-    var json = loadJsonFile();
-console.log(json)
+    loadJsonFile();
 
