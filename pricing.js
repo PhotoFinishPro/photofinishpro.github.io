@@ -11,13 +11,15 @@ async function loadJsonFile() {
         // Parse the JSON response into a JavaScript object  
         const jsonData = await response.json();  
             var sportsList = [];
+            var sportsAltList = [];
       for(var i = 0; i < jsonData.SPORTS.length; i++){
             sportsList.push(jsonData.SPORTS[i].name);
+            sportsAltList.push(jsonData.SPORTS[i].alt_name);
       }
             console.log(sportsList);
             var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
-                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] + "</option>";
+                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] +" (" + sportsAltList[i]  ")</option>";
             }
             document.getElementById("select").innerHTML = innerHTMLForSelect;
             var test = jsonData.TF[0].Packages[0].name;
