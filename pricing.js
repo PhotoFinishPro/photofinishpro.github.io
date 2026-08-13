@@ -19,7 +19,7 @@ async function loadJsonFile() {
             console.log(sportsList);
             var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
-                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] +" (" + sportsAltList[i]  ")</option>";
+                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] +" (" + sportsAltList[i] + ")</option>";
             }
             document.getElementById("select").innerHTML = innerHTMLForSelect;
             var test = jsonData.TF[0].Packages[0].name;
