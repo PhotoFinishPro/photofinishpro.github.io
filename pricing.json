@@ -11,6 +11,14 @@
             "sample": null
         }
     ],
+    "SPORTS": [
+        {
+            "name": "XC"
+        },
+        {
+            "name": "TF"
+        }
+    ],
     "XC": [
         {
             "Definitions": [
