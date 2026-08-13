@@ -21,6 +21,6 @@ async function loadJsonFile() {
  
     // Call the function  
     var json = loadJsonFile();
-
+console.log(json)
 var test = json.TF[0].Packages[0].name;
 console.log(test)
