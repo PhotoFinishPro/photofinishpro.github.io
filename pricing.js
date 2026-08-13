@@ -21,7 +21,20 @@ async function loadJsonFile() {
             for (var i = 0; i < sportsList.length; i++){
                   innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] +" (" + sportsAltList[i] + ")</option>";
             }
-            document.getElementById("select").innerHTML = innerHTMLForSelect;
+            var selectObj = document.getElementById("select");
+            selectObj.innerHTML = innerHTMLForSelect;
+
+            selectObj.addEventListener('change', function(event){
+                  const selectedValue = event.target.value;
+                  if(selectedValue == "TF"){
+                        console.log("TF PRICING");
+                  } else if (selectedValue == "XC"){
+                        console.log("XC PRICING")
+                  } else {
+                        console.log("?")
+                  }
+            });
+            
             var test = jsonData.TF[0].Packages[0].name;
             console.log(test)
  
