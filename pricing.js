@@ -44,11 +44,27 @@ async function loadJsonFile() {
                         }
                         currentTableHTML += "<tr><td colspan='4'><strong><em>Packages:</em></strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
                         for(var i = 0; i < jsonData.TF[0].Packages.length; i++){
-                              currentTableHTML += "<tr><td>" + jsonData.TF[0].Packages[i].name + "</td><td>$" + jsonData.TF[0].Packages[i].price + "</td><td>" + jsonData.TF[0].Packages[i].description + "</td><td>" + jsonData.TF[0].Packages[i].sample + "</td></tr>"
+                              var thisPrice = "";
+                              if(jsonData.TF[0].Packages[i].price == 0){
+                                    thisPrice = "FREE with Event Volunteer";
+                              } else if(jsonData.TF[0].Packages[i].alt_price != null){
+                                    thisPrice = "$" + jsonData.TF[0].Packages[i].price + ", " + jsonData.TF[0].Packages[i].alt_price;
+                              } else {
+                                    thisPrice = "$" + jsonData.TF[0].Packages[i].price;
+                              }
+                              currentTableHTML += "<tr><td>" + jsonData.TF[0].Packages[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.TF[0].Packages[i].description + "</td><td>" + jsonData.TF[0].Packages[i].sample + "</td></tr>"
                         }
                         currentTableHTML += "<tr><td colspan='4'><em><strong>Add-Ons</strong></em></td></tr>";
                         for(var i = 0; i < jsonData.TF[0].AddOns.length; i++){
-                              currentTableHTML += "<tr><td>" + jsonData.TF[0].AddOns[i].name + "</td><td>$" + jsonData.TF[0].AddOns[i].price + "</td><td>" + jsonData.TF[0].AddOns[i].description + "</td><td>" + jsonData.TF[0].AddOns[i].sample + "</td></tr>"
+                              var thisPrice = "";
+                              if(jsonData.TF[0].AddOns[i].price == 0){
+                                    thisPrice = "FREE with Event Volunteer";
+                              } else if(jsonData.TF[0].AddOns[i].alt_price != null){
+                                    thisPrice = "$" + jsonData.TF[0].AddOns[i].price + ", " + jsonData.TF[0].AddOns[i].alt_price;
+                              } else {
+                                    thisPrice = "$" + jsonData.TF[0].AddOns[i].price;
+                              }
+                              currentTableHTML += "<tr><td>" + jsonData.TF[0].AddOns[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.TF[0].AddOns[i].description + "</td><td>" + jsonData.TF[0].AddOns[i].sample + "</td></tr>"
                         }
                         console.log("TF PRICING");
                         
@@ -60,7 +76,15 @@ async function loadJsonFile() {
                         }
                         currentTableHTML += "<tr><td colspan='4'><strong><em>Packages:</em></strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
                         for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
-                              currentTableHTML += "<tr><td>" + jsonData.XC[0].Packages[i].name + "</td><td>$" + jsonData.XC[0].Packages[i].price + "</td><td>" + jsonData.XC[0].Packages[i].description + "</td><td>" + jsonData.XC[0].Packages[i].sample + "</td></tr>"
+                              var thisPrice = "";
+                              if(jsonData.XC[0].Packages[i].price == 0){
+                                    thisPrice = "FREE with Event Volunteer";
+                              } else if(jsonData.XC[0].Packages[i].alt_price != null){
+                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price + ", " + jsonData.XC[0].Packages[i].alt_price;
+                              } else {
+                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price;
+                              }
+                              currentTableHTML += "<tr><td>" + jsonData.XC[0].Packages[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.XC[0].Packages[i].description + "</td><td>" + jsonData.XC[0].Packages[i].sample + "</td></tr>"
                         }
                         currentTableHTML += "<tr><td colspan='4'><em><strong>Add-Ons</strong></em></td></tr>";
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
@@ -68,11 +92,11 @@ async function loadJsonFile() {
                               if(jsonData.XC[0].AddOns[i].price == 0){
                                     thisPrice = "FREE with Event Volunteer";
                               } else if(jsonData.XC[0].AddOns[i].alt_price != null){
-                                    thisPrice = jsonData.XC[0].AddOns[i].price + ", " + jsonData.XC[0].AddOns[i].alt_price;
+                                    thisPrice = "$" + jsonData.XC[0].AddOns[i].price + ", " + jsonData.XC[0].AddOns[i].alt_price;
                               } else {
-                                    thisPrice = jsonData.XC[0].AddOns[i].price;
+                                    thisPrice = "$" + jsonData.XC[0].AddOns[i].price;
                               }
-                              currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>$" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
+                              currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
                         console.log("XC PRICING")
                   } else {
