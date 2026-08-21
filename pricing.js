@@ -10,9 +10,11 @@ async function loadJsonFile() {
  
         // Parse the JSON response into a JavaScript object  
         const jsonData = await response.json();  
+            var all_costs = "";
             var sportsList = [];
             var sportsValList = [];
             var sportsActiveList = [];
+            all_costs = jsonData.ALL.name + ": " + jsonData.ALL.description;
       for(var i = 0; i < jsonData.SPORTS.length; i++){
             sportsList.push(jsonData.SPORTS[i].display_name);
             sportsValList.push(jsonData.SPORTS[i].name);
@@ -26,8 +28,9 @@ async function loadJsonFile() {
                   }
             }
             var selectObj = document.getElementById("select");
+            var ALL_costsObj = document.getElementById("ALL_costs");
+            ALL_costsObj.innerHTML = all_costs;
             selectObj.innerHTML = innerHTMLForSelect;
-
             selectObj.addEventListener('change', function(event){
                   const selectedValue = event.target.value;
                   if(selectedValue == "TF"){
