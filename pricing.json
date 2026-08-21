@@ -14,11 +14,33 @@
     "SPORTS": [
         {
             "name": "XC",
-            "alt_name": "Cross Country"
+            "alt_name": "Cross Country",
+            "display_name": "Cross Country Races (XC)",
+            "active": true
         },
         {
             "name": "TF",
-            "alt_name": "Track & Field"
+            "alt_name": "Track & Field",
+            "display_name": "Track & Field Races (TF)",
+            "active": true
+        },
+        {
+            "name": "SKI",
+            "alt_name": "Cross Country Skiing",
+            "display_name": "Cross Country Ski Races",
+            "active": false
+        },
+        {
+            "name": "BIKE",
+            "alt_name": "Bike Racing",
+            "display_name": "Bike Races",
+            "active": false
+        },
+        {
+            "name": "TRAIL",
+            "alt_name": "Trail Racing",
+            "display_name": "Trail Races",
+            "active": false
         }
     ],
     "XC": [
@@ -70,7 +92,7 @@
                     "multiple": false,
                     "split_add": true,
                     "description": "Live Results through AthleticLIVE",
-                    "sample":"No Sample Meet Available Yet"
+                    "sample":"<a href='https://live.athletic.net/meets/75073/events/xc/2898826' target='_blank'>MVHS All-Comers XC</a>"
                 },
                 {
                     "name": "Finish Line Image Export",
@@ -90,7 +112,7 @@
                     "multiple": true,
                     "split_add": false,
                     "description": "Timed splits during races. (Multiple splits can be scored from one location, as long as runners pass this location at the distances needed for the splits).",
-                    "sample": "No Sample Meet Available Yet"
+                    "sample": "<a href='https://live.athletic.net/meets/75073/events/xc/2898822' target='_blank'>MVHS All-Comers XC</a>"
                 },
                 {
                     "name": "Digital Scoreboard",
@@ -110,7 +132,7 @@
                     "multiple": false,
                     "split_add": false,
                     "description": "Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.",
-                    "sample": "No Sample Event Available Yet"
+                    "sample": "<a href='https://live.athletic.net/meets/75073/events/xc/2898826' target='_blank'>MVHS All-Comers XC</a>"
                 }
             ]
             
