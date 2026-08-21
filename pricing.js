@@ -39,15 +39,22 @@ async function loadJsonFile() {
                   if(selectedValue == "Track & Field Races (TF)"){
                         splitsName = jsonData.TF[0].Definitions[0].splits;
                         currentTableHTML = "<tr><th colspan ='4'>Pricing for " + selectedValue + "</th></tr>"
+                        if(jsonData.TF[0].Definitions[0].disclaimers != null){
+                              currentTableHTML = currentTableHTML + "<tr><td colspan ='4' style='color:red'>" + jsonData.TF[0].Definitions[0].disclaimers +"</td></tr>"
+                        }
                         console.log("TF PRICING");
                         
                   } else if (selectedValue == "Cross Country Races (XC)"){
                         splitsName = jsonData.XC[0].Definitions[0].splits;
                         currentTableHTML = "<tr><th colspan ='4'>Pricing for " + selectedValue + "</th></tr>"
+                        if(jsonData.XC[0].Definitions[0].disclaimers != null){
+                              currentTableHTML = currentTableHTML + "<tr><td colspan ='4' style='color:red'>" + jsonData.XC[0].Definitions[0].disclaimers +"</td></tr>"
+                        }
                         console.log("XC PRICING")
                   } else {
                         console.log("?")
                   }
+                  tableObj.innerHTML = currentTableHTML;
             });
             
             var test = jsonData.TF[0].Packages[0].name;
