@@ -35,7 +35,7 @@ async function loadJsonFile() {
             selectObj.addEventListener('change', function(event){
                   const selectedValue = event.target.value;
                   if(selectedValue == "TF"){
-                        splitsName = jsonData.XC[0].Definitions[0].splits;
+                        splitsName = jsonData.TF[0].Definitions[0].splits;
                         console.log("TF PRICING");
                         console.log("SPLIT_DEF" + splitsName);
                   } else if (selectedValue == "XC"){
