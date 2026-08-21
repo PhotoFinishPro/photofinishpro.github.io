@@ -42,7 +42,10 @@ async function loadJsonFile() {
                         if(jsonData.TF[0].Definitions[0].disclaimers != null){
                               currentTableHTML += "<tr><td colspan ='4' style='color:red'>" + jsonData.TF[0].Definitions[0].disclaimers +"</td></tr>"
                         }
-                        currentTableHTML += "<tr><td colspan='4'><em>Packages:</em></td></tr>";
+                        currentTableHTML += "<tr><td colspan='4'><em>Packages:</em></td></tr><tr><td>Name:</td><td>Price:</td><td>Features:</td><td>Sample:</td></tr>";
+                        for(var i = 0; i < jsonData.TF[0].Packages.length; i++){
+                              currentTableHTML += "<tr><td>" + jsonData.TF[0].Packages[i].name + "</td><td>$" + jsonData.TF[0].Packages[i].price + "</td><td>" + jsonData.TF[0].Packages[i].description + "</td><td>" + jsonData.TF[0].Packages[i].sample + "</td></tr>
+                        }
                         console.log("TF PRICING");
                         
                   } else if (selectedValue == "Cross Country Races (XC)"){
