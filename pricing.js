@@ -31,12 +31,17 @@ async function loadJsonFile() {
             var ALL_costsObj = document.getElementById("ALL_costs");
             ALL_costsObj.innerHTML = all_costs;
             selectObj.innerHTML = innerHTMLForSelect;
+            var splitsName = "";
             selectObj.addEventListener('change', function(event){
                   const selectedValue = event.target.value;
                   if(selectedValue == "TF"){
+                        splitsName = jsonData.XC[0].Definitions[0].splits;
                         console.log("TF PRICING");
+                        console.log("SPLIT_DEF" + splitsName);
                   } else if (selectedValue == "XC"){
+                        splitsName = jsonData.XC[0].Definitions[0].splits;
                         console.log("XC PRICING")
+                        console.log("SPLIT_DEF" + splitsName);
                   } else {
                         console.log("?")
                   }
