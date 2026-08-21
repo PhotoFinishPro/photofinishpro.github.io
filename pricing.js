@@ -13,13 +13,13 @@ async function loadJsonFile() {
             var sportsList = [];
             var sportsAltList = [];
       for(var i = 0; i < jsonData.SPORTS.length; i++){
-            sportsList.push(jsonData.SPORTS[i].name);
-            sportsAltList.push(jsonData.SPORTS[i].alt_name);
+            sportsList.push(jsonData.SPORTS[i].display_name);
+            //sportsAltList.push(jsonData.SPORTS[i].alt_name);
       }
             console.log(sportsList);
             var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
-                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] +" (" + sportsAltList[i] + ")</option>";
+                  innerHTMLForSelect += "<option value='" + sportsList[i] + "'>" + sportsList[i] + "</option>";
             }
             var selectObj = document.getElementById("select");
             selectObj.innerHTML = innerHTMLForSelect;
