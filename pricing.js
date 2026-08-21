@@ -12,14 +12,18 @@ async function loadJsonFile() {
         const jsonData = await response.json();  
             var sportsList = [];
             var sportsValList = [];
+            var sportsActiveList = [];
       for(var i = 0; i < jsonData.SPORTS.length; i++){
             sportsList.push(jsonData.SPORTS[i].display_name);
             sportsValList.push(jsonData.SPORTS[i].name);
+            sportsActiveList.push(jsonData.SPORTS[i].active);
       }
             console.log(sportsList);
             var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
-                  innerHTMLForSelect += "<option value='" + sportsValList[i] + "'>" + sportsList[i] + "</option>";
+                  if(sportsActiveList[i]){
+                        innerHTMLForSelect += "<option value='" + sportsValList[i] + "'>" + sportsList[i] + "</option>";
+                  }
             }
             var selectObj = document.getElementById("select");
             selectObj.innerHTML = innerHTMLForSelect;
