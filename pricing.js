@@ -17,7 +17,7 @@ async function loadJsonFile() {
             all_costs = jsonData.ALL[0].name + ": " + jsonData.ALL[0].description;
       for(var i = 0; i < jsonData.SPORTS.length; i++){
             sportsList.push(jsonData.SPORTS[i].display_name);
-            sportsValList.push(jsonData.SPORTS[i].name);
+            sportsValList.push(jsonData.SPORTS[i].display_name);
             sportsActiveList.push(jsonData.SPORTS[i].active);
       }
             console.log(sportsList);
@@ -29,19 +29,22 @@ async function loadJsonFile() {
             }
             var selectObj = document.getElementById("select");
             var ALL_costsObj = document.getElementById("ALL_costs");
+            var tableObj = document.getElementById("this_pricing_matrix");
             ALL_costsObj.innerHTML = all_costs;
             selectObj.innerHTML = innerHTMLForSelect;
             var splitsName = "";
+            var currentTableHTML = "";
             selectObj.addEventListener('change', function(event){
                   const selectedValue = event.target.value;
-                  if(selectedValue == "TF"){
+                  if(selectedValue == "Track & Field Races (TF)"){
                         splitsName = jsonData.TF[0].Definitions[0].splits;
+                        currentTableHTML = "<tr><th colspan ='4'>Pricing for " + selectedValue + "</th></tr>"
                         console.log("TF PRICING");
-                        console.log("SPLIT_DEF" + splitsName);
-                  } else if (selectedValue == "XC"){
+                        
+                  } else if (selectedValue == "Cross Country Races (XC)"){
                         splitsName = jsonData.XC[0].Definitions[0].splits;
+                        currentTableHTML = "<tr><th colspan ='4'>Pricing for " + selectedValue + "</th></tr>"
                         console.log("XC PRICING")
-                        console.log("SPLIT_DEF" + splitsName);
                   } else {
                         console.log("?")
                   }
