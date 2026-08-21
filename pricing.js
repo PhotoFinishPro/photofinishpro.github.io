@@ -21,7 +21,7 @@ async function loadJsonFile() {
             sportsActiveList.push(jsonData.SPORTS[i].active);
       }
             console.log(sportsList);
-            var innerHTMLForSelect = "<option> -- Please Select a Sport -- </option>";
+            var innerHTMLForSelect = "<option disabled> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
                   if(sportsActiveList[i]){
                         innerHTMLForSelect += "<option value='" + sportsValList[i] + "'>" + sportsList[i] + "</option>";
@@ -42,9 +42,13 @@ async function loadJsonFile() {
                         if(jsonData.TF[0].Definitions[0].disclaimers != null){
                               currentTableHTML += "<tr><td colspan ='4' style='color:red'>" + jsonData.TF[0].Definitions[0].disclaimers +"</td></tr>"
                         }
-                        currentTableHTML += "<tr><td colspan='4'><strong>Packages:</strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
+                        currentTableHTML += "<tr><td colspan='4'><strong><em>Packages:</em></strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
                         for(var i = 0; i < jsonData.TF[0].Packages.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.TF[0].Packages[i].name + "</td><td>$" + jsonData.TF[0].Packages[i].price + "</td><td>" + jsonData.TF[0].Packages[i].description + "</td><td>" + jsonData.TF[0].Packages[i].sample + "</td></tr>"
+                        }
+                        currentTableHTML += "<tr><td colspan='4'>Add-Ons</td></tr>";
+                        for(var i = 0; i < jsonData.TF[0].AddOns.length; i++){
+                              currentTableHTML += "<tr><td>" + jsonData.TF[0].AddOns[i].name + "</td><td>$" + jsonData.TF[0].AddOns[i].price + "</td><td>" + jsonData.TF[0].AddOns[i].description + "</td><td>" + jsonData.TF[0].AddOns[i].sample + "</td></tr>"
                         }
                         console.log("TF PRICING");
                         
@@ -54,9 +58,13 @@ async function loadJsonFile() {
                         if(jsonData.XC[0].Definitions[0].disclaimers != null){
                               currentTableHTML += "<tr><td colspan ='4' style='color:red'>" + jsonData.XC[0].Definitions[0].disclaimers +"</td></tr>"
                         }
-                        currentTableHTML += "<tr><td colspan='4'><strong>Packages:</strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
+                        currentTableHTML += "<tr><td colspan='4'><strong><em>Packages:</em></strong></td></tr><tr><td><strong>Name:</strong></td><td><strong>Price:</strong></td><td><strong>Features:</strong></td><td><strong>Sample:</strong></td></tr>";
                         for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].Packages[i].name + "</td><td>$" + jsonData.XC[0].Packages[i].price + "</td><td>" + jsonData.XC[0].Packages[i].description + "</td><td>" + jsonData.XC[0].Packages[i].sample + "</td></tr>"
+                        }
+                        currentTableHTML += "<tr><td colspan='4'>Add-Ons</td></tr>";
+                        for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
+                              currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>$" + jsonData.XC[0].AddOns[i].price + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
                         console.log("XC PRICING")
                   } else {
