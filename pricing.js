@@ -64,7 +64,15 @@ async function loadJsonFile() {
                         }
                         currentTableHTML += "<tr><td colspan='4'><em><strong>Add-Ons</strong></em></td></tr>";
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
-                              currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>$" + jsonData.XC[0].AddOns[i].price + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
+                              var thisPrice = "";
+                              if(jsonData.XC[0].AddOns[i].price == 0){
+                                    thisPrice = "FREE with Event Volunteer";
+                              } else if(jsonData.XC[0].AddOns[i].alt_price != null){
+                                    thisPrice = jsonData.XC[0].AddOns[i].price + ", " + jsonData.XC[0].AddOns[i].alt_price;
+                              } else {
+                                    thisPrice = jsonData.XC[0].AddOns[i].price;
+                              }
+                              currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>$" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
                         console.log("XC PRICING")
                   } else {
