@@ -14,7 +14,7 @@ async function loadJsonFile() {
             var sportsList = [];
             var sportsValList = [];
             var sportsActiveList = [];
-            all_costs = jsonData.ALL.name + ": " + jsonData.ALL.description;
+            all_costs = jsonData.ALL[0].name + ": " + jsonData.ALL[0].description;
       for(var i = 0; i < jsonData.SPORTS.length; i++){
             sportsList.push(jsonData.SPORTS[i].display_name);
             sportsValList.push(jsonData.SPORTS[i].name);
