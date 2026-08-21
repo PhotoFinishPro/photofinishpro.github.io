@@ -79,7 +79,7 @@
                     "add_on": 180,
                     "multiple": false,
                     "split_add": true,
-                    "description": "One Primary and One Backup system, each with 2 cameras<br>Official Results Published After Each Event<br>Add_Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos",
+                    "description": "One Primary and One Backup system, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos",
                     "sample": "No Sample Meet Available Yet"
                 }
             ],
@@ -121,7 +121,7 @@
                     "add_on": null,
                     "multiple": false,
                     "split_add": false,
-                    "description": "Full_size scoreboard at finish line, showing event results",
+                    "description": "Full-size scoreboard at finish line, showing event results",
                     "sample": "No Sample Image Available Yet"
                 },
                 {
@@ -174,7 +174,7 @@
                     "add_on": 180,
                     "multiple": false,
                     "split_add": true,
-                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add_Ons: Live Track Results, Live Field Results, Enroute Timing, Race Videos, Field Event Videos, Lap Counter, Digital Scoreboard.",
+                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons: Live Track Results, Live Field Results, Enroute Timing, Race Videos, Field Event Videos, Lap Counter, Digital Scoreboard.",
                     "sample":"No Sample Meet Available Yet"
                 }
             ],
@@ -196,7 +196,7 @@
                     "add_on": null,
                     "multiple": false,
                     "split_add": false,
-                    "description": "Live Attempt_By_Attempt Field Results through AthleticLIVE. Uses AthleticFIELD app.",
+                    "description": "Live Attempt-By-Attempt Field Results through AthleticLIVE. Uses AthleticFIELD app.",
                     "sample":"No Sample Event Available Yet"
                 },
                 {
@@ -216,7 +216,7 @@
                     "add_on": null,
                     "multiple": false,
                     "split_add": false,
-                    "description": "Full_size scoreboard at finish line, showing event results",
+                    "description": "Full-size scoreboard at finish line, showing event results",
                     "sample": "No Sample Image Available Yet"
                 },
                 {
@@ -246,7 +246,7 @@
                     "add_on": null,
                     "multiple": false,
                     "split_add": false,
-                    "description": "Attempt_by_Attempt videos for field events, posted to AthleticLIVE and AthleticNET. Requires Live Field Results",
+                    "description": "Attempt-by-Attempt videos for field events, posted to AthleticLIVE and AthleticNET. Requires Live Field Results",
                     "sample":"No Sample Event Available Yet"
                 }
             ]
