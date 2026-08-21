@@ -21,7 +21,7 @@ async function loadJsonFile() {
             sportsActiveList.push(jsonData.SPORTS[i].active);
       }
             console.log(sportsList);
-            var innerHTMLForSelect = "<option disabled> -- Please Select a Sport -- </option>";
+            var innerHTMLForSelect = "<option selected disabled> -- Please Select a Sport -- </option>";
             for (var i = 0; i < sportsList.length; i++){
                   if(sportsActiveList[i]){
                         innerHTMLForSelect += "<option value='" + sportsValList[i] + "'>" + sportsList[i] + "</option>";
@@ -46,7 +46,7 @@ async function loadJsonFile() {
                         for(var i = 0; i < jsonData.TF[0].Packages.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.TF[0].Packages[i].name + "</td><td>$" + jsonData.TF[0].Packages[i].price + "</td><td>" + jsonData.TF[0].Packages[i].description + "</td><td>" + jsonData.TF[0].Packages[i].sample + "</td></tr>"
                         }
-                        currentTableHTML += "<tr><td colspan='4'>Add-Ons</td></tr>";
+                        currentTableHTML += "<tr><td colspan='4'><em><strong>Add-Ons</strong></em></td></tr>";
                         for(var i = 0; i < jsonData.TF[0].AddOns.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.TF[0].AddOns[i].name + "</td><td>$" + jsonData.TF[0].AddOns[i].price + "</td><td>" + jsonData.TF[0].AddOns[i].description + "</td><td>" + jsonData.TF[0].AddOns[i].sample + "</td></tr>"
                         }
@@ -62,7 +62,7 @@ async function loadJsonFile() {
                         for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].Packages[i].name + "</td><td>$" + jsonData.XC[0].Packages[i].price + "</td><td>" + jsonData.XC[0].Packages[i].description + "</td><td>" + jsonData.XC[0].Packages[i].sample + "</td></tr>"
                         }
-                        currentTableHTML += "<tr><td colspan='4'>Add-Ons</td></tr>";
+                        currentTableHTML += "<tr><td colspan='4'><em><strong>Add-Ons</strong></em></td></tr>";
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>$" + jsonData.XC[0].AddOns[i].price + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
