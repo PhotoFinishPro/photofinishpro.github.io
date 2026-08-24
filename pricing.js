@@ -107,11 +107,11 @@ async function loadJsonFile() {
                               if(jsonData.XC[0].Packages[i].price == 0){
                                     thisPrice = "FREE";
                               } else if(jsonData.XC[0].Packages[i].alt_price != null){
-                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price + ", " + jsonData.XC[0].Packages[i].alt_price;
+                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price;
                               } else {
                                     thisPrice = "$" + jsonData.XC[0].Packages[i].price;
                               }
-                              currentPackagesText += "<option value='" + jsonData.XC[0].Packages[i].name + "'>" + jsonData.XC[0].Packages[i].name + "--" + thisPrice + "</option>";
+                              currentPackagesText += "<option value='" + jsonData.XC[0].Packages[i].name + "'>" + jsonData.XC[0].Packages[i].name + " -- " + thisPrice + "</option>";
                         }
                         packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
