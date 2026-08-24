@@ -30,6 +30,7 @@ async function loadJsonFile() {
             var selectObj = document.getElementById("select");
             var ALL_costsObj = document.getElementById("ALL_costs");
             var tableObj = document.getElementById("this_pricing_matrix");
+            var formObj = document.getElementById("estimator_form");
             ALL_costsObj.innerHTML = all_costs;
             selectObj.innerHTML = innerHTMLForSelect;
             var splitsName = "";
@@ -98,6 +99,9 @@ async function loadJsonFile() {
                               }
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
+                        const packages = document.createElement("select");
+                        packages.innerHTML = "";
+                        formObj.appendChild(packages);
                         console.log("XC PRICING")
                   } else {
                         console.log("?")
