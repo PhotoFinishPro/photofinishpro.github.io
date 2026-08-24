@@ -115,6 +115,7 @@ async function loadJsonFile() {
                               currentPackagesText += "<option value='" + jsonData.XC[0].Packages[i].name + "'>" + jsonData.XC[0].Packages[i].name + " -- " + thisPrice + "</option>";
                         }
                         packages.innerHTML = currentPackagesText;
+                        formObj.appendChild(document.createElement("br"));
                         //packages.style.whiteSpace = "pre-line";
                         formObj.appendChild(packages);
                         formObj.appendChild(document.createElement("br"));
