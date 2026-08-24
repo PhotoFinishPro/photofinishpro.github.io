@@ -115,12 +115,13 @@ async function loadJsonFile() {
                         }
                         packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
+                        const addOn;
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
                               if(jsonData.XC[0].AddOns.multiple){
-                                    const addOn = document.createElement("input");
+                                    addOn = document.createElement("input");
                                     addOn.type = "number";
                               } else {
-                                    const addOn = document.createElement("input");
+                                    addOn = document.createElement("input");
                                     addOn.type = "checkbox";
                               }
                               addOn.id = jsonData.XC[0].AddOns.name;
