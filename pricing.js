@@ -115,6 +115,20 @@ async function loadJsonFile() {
                         }
                         packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
+                        for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
+                              if(jsonData.XC[0].AddOns.multiple){
+                                    const addOn = document.createElement("input");
+                                    addOn.type = "number";
+                              } else {
+                                    const addOn = document.createElement("input");
+                                    addOn.type = "checkbox";
+                              }
+                              addOn.id = jsonData.XC[0].AddOns.name;
+                              const labelAdd = document.createElement("label");
+                              labelAdd.innerHTML = jsonData.XC[0].AddOns.name + " -- " + jsonData.XC[0].AddOns.price;
+                              formObj.appendChild(addOn);
+                              formObj.appendChild(labelAdd);
+                        }
                         console.log("XC PRICING")
                   } else {
                         console.log("?")
