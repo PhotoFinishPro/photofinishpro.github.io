@@ -115,7 +115,7 @@ async function loadJsonFile() {
                         }
                         packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
-                        const addOn;
+                        var addOn;
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
                               if(jsonData.XC[0].AddOns.multiple){
                                     addOn = document.createElement("input");
