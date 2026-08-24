@@ -115,8 +115,9 @@ async function loadJsonFile() {
                               currentPackagesText += "<option value='" + jsonData.XC[0].Packages[i].name + "'>" + jsonData.XC[0].Packages[i].name + " -- " + thisPrice + "</option>";
                         }
                         packages.innerHTML = currentPackagesText;
+                        packages.style.whiteSpace = "pre-line";
                         formObj.appendChild(packages);
-                        formObj.appendChild(brObj);
+                        //formObj.appendChild(brObj);
                         var addOn;
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
                               if(jsonData.XC[0].AddOns[i].multiple){
@@ -137,9 +138,10 @@ async function loadJsonFile() {
                               addOn.id = jsonData.XC[0].AddOns[i].name;
                               const labelAdd = document.createElement("label");
                               labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + thisPrice;
+                              formObj.style.whiteSpace = "pre-line";
                               formObj.appendChild(addOn);
                               formObj.appendChild(labelAdd);
-                              formObj.appendChild(brObj);
+                              //formObj.appendChild(brObj);
                         }
                         console.log("XC PRICING")
                   } else {
