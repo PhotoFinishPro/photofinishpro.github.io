@@ -117,16 +117,16 @@ async function loadJsonFile() {
                         formObj.appendChild(packages);
                         var addOn;
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
-                              if(jsonData.XC[0].AddOns.multiple){
+                              if(jsonData.XC[0].AddOns[i].multiple){
                                     addOn = document.createElement("input");
                                     addOn.type = "number";
                               } else {
                                     addOn = document.createElement("input");
                                     addOn.type = "checkbox";
                               }
-                              addOn.id = jsonData.XC[0].AddOns.name;
+                              addOn.id = jsonData.XC[0].AddOns[i].name;
                               const labelAdd = document.createElement("label");
-                              labelAdd.innerHTML = jsonData.XC[0].AddOns.name + " -- " + jsonData.XC[0].AddOns.price;
+                              labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + jsonData.XC[0].AddOns[i].price;
                               formObj.appendChild(addOn);
                               formObj.appendChild(labelAdd);
                         }
