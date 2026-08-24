@@ -99,8 +99,21 @@ async function loadJsonFile() {
                               }
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
+                        var currentPackagesText = "<option selected disabled> -- Please Select a Package -- </option>";
                         const packages = document.createElement("select");
-                        packages.innerHTML = "";
+                        packages.id = "packages";
+                        for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
+                              var thisPrice = "";
+                              if(jsonData.XC[0].Packages[i].price == 0){
+                                    thisPrice = "FREE";
+                              } else if(jsonData.XC[0].Packages[i].alt_price != null){
+                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price + ", " + jsonData.XC[0].Packages[i].alt_price;
+                              } else {
+                                    thisPrice = "$" + jsonData.XC[0].Packages[i].price;
+                              }
+                              currentPackagesText += "<option value='" + jsonData.XC[0].Packages[i].name + "'>" + jsonData.XC[0].Packages[i].name + "--" + thisPrice + "</option>";
+                        }
+                        packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
                         console.log("XC PRICING")
                   } else {
