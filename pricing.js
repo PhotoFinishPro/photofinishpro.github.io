@@ -100,6 +100,7 @@ async function loadJsonFile() {
                               currentTableHTML += "<tr><td>" + jsonData.XC[0].AddOns[i].name + "</td><td>" + thisPrice + "</td><td>" + jsonData.XC[0].AddOns[i].description + "</td><td>" + jsonData.XC[0].AddOns[i].sample + "</td></tr>"
                         }
                         var currentPackagesText = "<option selected disabled> -- Please Select a Package -- </option>";
+                        const brObj = document.createElement("br");
                         const packages = document.createElement("select");
                         packages.id = "packages";
                         for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
@@ -115,6 +116,7 @@ async function loadJsonFile() {
                         }
                         packages.innerHTML = currentPackagesText;
                         formObj.appendChild(packages);
+                        formObj.appendChild(brObj);
                         var addOn;
                         for(var i = 0; i < jsonData.XC[0].AddOns.length; i++){
                               if(jsonData.XC[0].AddOns[i].multiple){
@@ -124,11 +126,20 @@ async function loadJsonFile() {
                                     addOn = document.createElement("input");
                                     addOn.type = "checkbox";
                               }
+                              var thisPrice;
+                              if(jsonData.XC[0].AddOns[i].price == 0){
+                                    thisPrice = "FREE with Event Volunteer";
+                              } else if(jsonData.XC[0].AddOns[i].alt_price != null){
+                                    thisPrice = "$" + jsonData.XC[0].AddOns[i].price + ", " + jsonData.XC[0].AddOns[i].alt_price;
+                              } else {
+                                    thisPrice = "$" + jsonData.XC[0].AddOns[i].price;
+                              }
                               addOn.id = jsonData.XC[0].AddOns[i].name;
                               const labelAdd = document.createElement("label");
-                              labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + jsonData.XC[0].AddOns[i].price;
+                              labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + thisPrice;
                               formObj.appendChild(addOn);
                               formObj.appendChild(labelAdd);
+                              formObj.appendChild(brObj);
                         }
                         console.log("XC PRICING")
                   } else {
