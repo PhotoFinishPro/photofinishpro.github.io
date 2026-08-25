@@ -24,9 +24,9 @@
     <p>Contact us at PhotoFinishProTiming@gmail.com for event booking. Let us know date, location, and which package/add-ons you would like. Looking for a different scenario? Reach out with your idea to the same email, we would be happy to figure your meet out with you!</p
     <br>
     <h1>Event Pricing:</h1>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="pricing.js" type="module"></script>
     <h4 id="ALL_costs"></h4>
-    <!--<h4>Transportation Cost: We charge $6 per every 5 miles that our timer has to travel (estimated during booking).</h4>-->
     <br>
     <h5>View Pricing for: </h5><select style="font-size:18px" id="select">
     </select>
@@ -34,211 +34,30 @@
     <br>
     <fieldset>
         <h4>Price Estimator:</h4>
+        <h5>Select a sport above, fill this out, and click "Get Quote" to see your total and email it to us.</h5>
         <form id="estimator_form_container">
-            <!--<h3>In Progress. This feature is not available right now. Check back soon!</h3>
-            <h5>Questions? Email PhotoFinishProTiming@gmail.com</h5>-->
             <label for="contact_name">Name:</label><br>
             <input type="text" id="contact_name" style="font-size:18px" required><br><br>
- 
+
             <label for="contact_email">Email:</label><br>
             <input type="email" id="contact_email" style="font-size:18px" required><br><br>
- 
+
             <label for="contact_event_name">Event Name:</label><br>
             <input type="text" id="contact_event_name" style="font-size:18px"><br><br>
- 
+
             <label for="contact_event_date">Event Date:</label><br>
             <input type="date" id="contact_event_date" style="font-size:18px"><br><br>
- 
+
             <label for="contact_event_location">Event Location:</label><br>
             <input type="text" id="contact_event_location" style="font-size:18px"><br><br>
- 
+
             <label for="contact_miles">Estimated Miles to Event (round trip our timer travels):</label><br>
             <input type="number" id="contact_miles" min="0" style="font-size:18px"><br><br>
-            <div id="estimator_form">
-                <h3>Please select a sport to continue!</h3>
-            </div>
-            <input type="submit" value="Get Quote!">
+
+            <div id="estimator_form"></div>
+
+            <input type="submit" value="Get Quote">
         </form>
+        <h5>Questions? Email PhotoFinishProTiming@gmail.com</h5>
     </fieldset>
-    <!--<a href="#tf">Jump to TF Pricing</a>-->
-    <!--<div id="xc">
-        <table>
-            <tr>
-                <th colspan="4">XC Timing Packages</th>
-            </tr>
-            <tr>
-                <th>Name:</th>
-                <th>Price:</th>
-                <th>Features:</th>
-                <th>Sample:</th>
-            </tr>
-            <tr>
-                <td>Lite</td>
-                <td>$200</td>
-                <td>One Linescan and One Front Facing Camera<br>Official Results Published After Meet</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <td>Standard</td>
-                <td>$400</td>
-                <td>One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <td>Professional</td>
-                <td>$590, $180 per Split Location</td>
-                <td>One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos.</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <th colspan="4">Add-Ons</th>
-            </tr>
-            <tr>
-                <td>Live Results</td>
-                <td>$85</td>
-                <td>Live Results through AthleticLIVE.</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <td>Finish Line Image Export</td>
-                <td>$30, $10 with Live Results</td>
-                <td>Finish Line Images exported to results.</td>
-                <td>No Sample Event Available Yet</td>
-            </tr>
-            <tr>
-                <td>Split Locations (Requires Live Results)</td>
-                <td>$200 per location</td>
-                <td>Timed splits during races. (Multiple splits can be scored from one location, as long as runners pass this location at the distances needed for the splits). </td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <!--<tr>
-                <td>Live Video</td>
-                <td>TBD</td>
-                <td>Live Streaming of Event.</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>--
-            <tr>
-                <td>Digital Scoreboard</td>
-                <td>$150</td>
-                <td>Full-size scoreboard at finish line, showing event results</td>
-                <td>No Sample Image Available Yet</td>
-            </tr>
-            <!--<tr>
-                <td>RFID</td>
-                <td>TBD</td>
-                <td>Bib Tags and Timing Mats</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>--
-            <tr>
-                <td>Race Videos</td>
-                <td>FREE with Volunteer</td>
-                <td>Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.</td>
-                <td>No Sample Event Available Yet</td>
-            </tr>
-        </table>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div id="tf">
-    <a href="#xc">Jump to XC Pricing</a>
-        <table>
-            <tr>
-                <th colspan="4">TF Timing Packages</th>
-            </tr>
-            <tr>
-                <td colspan="4"><div style="color:red">Field Events: Requires event volunteers to score field events. Please contact us if this will be an issue.</div></td>
-            </tr>
-            <tr>
-                <th>Name:</th>
-                <th>Price:</th>
-                <th>Features:</th>
-                <th>Sample:</th>
-            </tr>
-            <tr>
-                <td>Lite</td>
-                <td>$175</td>
-                <td>One Linescan and One Front Facing Camera<br>Official Results Published After Meet<br>Paper Field Event Scoring</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <td>Standard</td>
-                <td>$350</td>
-                <td>One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Paper Field Event Scoring, unless Live Field Results</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <td>Professional</td>
-                <td>$580, $180 per Enroute Location</td>
-                <td>One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons: Live Track Results, Live Field Results, Enroute Timing, Race Videos, Field Event Videos, Lap Counter, Digital Scoreboard.</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>
-            <tr>
-                <th colspan="4">Add-Ons</th>
-            </tr>
-            <tr>
-                <td>Live Track Results</td>
-                <td>$80</td>
-                <td>Live Track Results through AthleticLIVE with splits timed for distance races and relays. Finish Line Images exported for all races.</td>
-                <td><a href="https://live.athletic.net/meets/74886?_gl=1*1ltkr3o*_ga*NTk2MTkzNDUxLjE3Njc0NzA5ODE.*_ga_CV6QCFM8SJ*czE3ODE3NDEyMjUkbzEwOSRnMSR0MTc4MTc0MTIyNiRqNTkkbDAkaDA." target="_blank">Timer Training 1</a></td>
-            </tr>
-            <tr>
-                <td>Live Field Results (Requires Live Track Results)</td>
-                <td>$30</td>
-                <td>Live Attempt-By-Attempt Field Results through AthleticLIVE. Uses AthleticFIELD app.<br></td>
-                <td>No Sample Event Available Yet</td>
-            </tr>
-            <tr>
-                <td>Enroute Timing</td>
-                <td>$200 per Enroute Location</td>
-                <td>Enroute timed results for events. Example: 3200m race would have enroute 3000m times.</td>
-                <td>No Sample Event Available Yet</td>
-            </tr>
-            <!--<tr>
-                <td>Live Video</td>
-                <td>TBD</td>
-                <td>Live Streaming of Event, requires at least Standard Live.</td>
-                <td>No Sample Meet Available Yet</td>
-            </tr>--
-            <tr>
-                <td>Digital Scoreboard</td>
-                <td>$150</td>
-                <td>Full-size scoreboard at finish line, showing event results</td>
-                <td>No Sample Image Available Yet</td>
-            </tr>
-            <tr>
-                <td>Lap Counter</td>
-                <td>$140</td>
-                <td>Digital Sign to show laps left to competitors.</td>
-                <td>No Sample Image Available Yet</td>
-            </tr>
-            <tr>
-                <td>Race Videos</td>
-                <td>FREE with Volunteer</td>
-                <td>Race Videos to go on AthleticLIVE and AthleticNET after the meet concludes.</td>
-                <td><a href="https://live.athletic.net/meets/75071/events/individual/2850571" target="_blank">Timer Training 2</a></td>
-            </tr>
-            <tr>
-                <td>Field Event Videos</td>
-                <td>FREE with Volunteer</td>
-                <td>Attempt-by-Attempt videos for field events, posted to AthleticLIVE and AthleticNET. Requires a package with AthleticFIELD app.</td>
-                <td>No Sample Event Available Yet</td>
-            </tr>
-        </table>
-    </div>-->
-    <!--<br>
-    <table>
-        <tr>
-            <th>What We Do:</th>
-            <th>What You Do:</th>
-        </tr>
-        <tr>
-            <td>Manage entries, seeding</td>
-            <td>Book venue, set schedule</td>
-        </tr>
-        <tr>
-            <td>Run timing for all races</td>
-            <td>Start and referee the course in all places but the finish</td>
-        </tr>
-    </table>-->
 </body>
