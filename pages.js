@@ -22,3 +22,4 @@ async function loadJsonFile() {
     console.error('Error loading JSON file:', error);
   }
 }
+loadJsonFile()
