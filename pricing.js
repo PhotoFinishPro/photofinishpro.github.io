@@ -1,3 +1,18 @@
+// ---- EmailJS config ----
+// Fill these in from your EmailJS account (emailjs.com):
+//   PUBLIC_KEY   -> Account > General
+//   SERVICE_ID   -> Email Services > your connected service
+//   TEMPLATE_ID  -> Email Templates > your template
+// Your template should reference these variables: {{from_name}}, {{from_email}},
+// {{event_name}}, {{event_date}}, {{event_location}}, {{sport}}, {{line_items}}, {{total}}
+var EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+var EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+if (window.emailjs) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
 async function loadJsonFile() {
   try {
     // Fetch the JSON file (relative path)
@@ -153,25 +168,45 @@ async function loadJsonFile() {
       return addOn.price;
     }
 
-    function buildMailtoLink(quote) {
-      var subject = "Timing Quote Request" + (quote.eventName ? " - " + quote.eventName : "");
-      var lines = [];
-      lines.push("Name: " + (quote.name || "-"));
-      lines.push("Email: " + (quote.email || "-"));
-      lines.push("Event: " + (quote.eventName || "-"));
-      lines.push("Date: " + (quote.eventDate || "-"));
-      lines.push("Location: " + (quote.eventLocation || "-"));
-      lines.push("Sport: " + quote.sportKey);
-      lines.push("");
-      lines.push("Line Items:");
-      for (var i = 0; i < quote.lineItems.length; i++) {
-        lines.push("- " + quote.lineItems[i].label + ": $" + quote.lineItems[i].amount.toFixed(2));
+    function sendQuoteEmail(quote, statusEl, sendBtn) {
+      if (!window.emailjs) {
+        statusEl.textContent = "Email service didn't load. Please email PhotoFinishProTiming@gmail.com directly.";
+        statusEl.style.color = "red";
+        return;
       }
-      lines.push("");
-      lines.push("Total: $" + quote.total.toFixed(2));
 
-      var body = lines.join("\n");
-      return "mailto:PhotoFinishProTiming@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      var lineItemsText = "";
+      for (var i = 0; i < quote.lineItems.length; i++) {
+        lineItemsText += quote.lineItems[i].label + ": $" + quote.lineItems[i].amount.toFixed(2) + "\n";
+      }
+
+      var templateParams = {
+        from_name: quote.name,
+        from_email: quote.email,
+        event_name: quote.eventName,
+        event_date: quote.eventDate,
+        event_location: quote.eventLocation,
+        sport: quote.sportKey,
+        line_items: lineItemsText,
+        total: quote.total.toFixed(2)
+      };
+
+      sendBtn.disabled = true;
+      statusEl.style.color = "black";
+      statusEl.textContent = "Sending...";
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams).then(
+        function () {
+          statusEl.textContent = "Quote sent! We'll be in touch soon.";
+          statusEl.style.color = "green";
+        },
+        function (error) {
+          console.error("EmailJS error:", error);
+          statusEl.textContent = "Something went wrong sending your quote. Please email PhotoFinishProTiming@gmail.com directly.";
+          statusEl.style.color = "red";
+          sendBtn.disabled = false;
+        }
+      );
     }
 
     function renderQuote(quote) {
@@ -200,11 +235,21 @@ async function loadJsonFile() {
 
       container.innerHTML = html;
 
-      var link = document.createElement("a");
-      link.href = buildMailtoLink(quote);
-      link.textContent = "Email This Quote to PhotoFinishProTiming@gmail.com";
-      link.style = "display:inline-block;margin-top:10px;font-size:18px";
-      container.appendChild(link);
+      var sendBtn = document.createElement("button");
+      sendBtn.type = "button";
+      sendBtn.textContent = "Send This Quote to Us";
+      sendBtn.style = "display:inline-block;margin-top:10px;font-size:18px";
+
+      var statusEl = document.createElement("p");
+      statusEl.id = "quote_status";
+      statusEl.style = "font-size:16px";
+
+      sendBtn.addEventListener('click', function () {
+        sendQuoteEmail(quote, statusEl, sendBtn);
+      });
+
+      container.appendChild(sendBtn);
+      container.appendChild(statusEl);
 
       formContainer.appendChild(container);
     }
