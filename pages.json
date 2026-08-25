@@ -2,35 +2,43 @@
   "pages": [
     {
       "title": "Home",
-      "link": "index.html"
+      "link": "index.html",
+      "target": "_self"
     },
     {
       "title": "Our Services",
-      "link": "services.html"
+      "link": "services.html",
+      "target": "_self"
     },
     {
       "title": "Our Software",
-      "link": "software.html"
+      "link": "software.html",
+      "target": "_self"
     },
     {
       "title": "About",
-      "link": "about.html"
+      "link": "about.html",
+      "target": "_self"
     },
     {
       "title": "Our Crew",
-      "link": "crew.html"
+      "link": "crew.html",
+      "target": "_self"
     },
     {
       "title": "Booking & Pricing",
-      "link": "pricing.html"
+      "link": "pricing.html",
+      "target": "_self"
     },
     {
       "title": "Upcoming Meets",
-      "link": "upcoming.html"
+      "link": "upcoming.html",
+      "target": "_self"
     },
     {
       "title": "AthleticNET",
-      "link": "https://www.athletic.net/team/100235/track-and-field-outdoor/2026"
+      "link": "https://www.athletic.net/team/100235/track-and-field-outdoor/2026",
+      "target": "_blank"
     }
   ]
 }
