@@ -1,0 +1,36 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "link": "index.html"
+    },
+    {
+      "title": "Our Services",
+      "link": "services.html"
+    },
+    {
+      "title": "Our Software",
+      "link": "software.html"
+    },
+    {
+      "title": "About",
+      "link": "about.html"
+    },
+    {
+      "title": "Our Crew",
+      "link": "crew.html"
+    },
+    {
+      "title": "Booking & Price",
+      "link": "pricing.html"
+    },
+    {
+      "title": "Upcoming Meets",
+      "link": "upcoming.html"
+    },
+    {
+      "title": "AthleticNET",
+      "link": "https://www.athletic.net/team/100235/track-and-field-outdoor/2026"
+    }
+  ]
+}
