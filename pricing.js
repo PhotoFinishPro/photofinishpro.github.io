@@ -5,9 +5,9 @@
 //   TEMPLATE_ID  -> Email Templates > your template
 // Your template should reference these variables: {{from_name}}, {{from_email}},
 // {{event_name}}, {{event_date}}, {{event_location}}, {{sport}}, {{line_items}}, {{total}}
-var EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-var EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+var EMAILJS_PUBLIC_KEY = "pzO1s8wAYLDaGwOPy";
+var EMAILJS_SERVICE_ID = "service_d86gcrb";
+var EMAILJS_TEMPLATE_ID = "template_eioxrff";
 
 if (window.emailjs) {
   emailjs.init(EMAILJS_PUBLIC_KEY);
