@@ -16,4 +16,9 @@ async function loadJsonFile() {
       currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "'>" + jsonData.pages[i].title + "</a></li>";
     }
     menu.innerHTML = currentMenuHtml;
+  console.log('Loaded JSON data:', jsonData);
+    return jsonData;
+  } catch (error) {
+    console.error('Error loading JSON file:', error);
   }
+}
