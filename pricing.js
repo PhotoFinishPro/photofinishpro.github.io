@@ -148,6 +148,7 @@ async function loadJsonFile() {
                   } else {
                         console.log("?")
                   }
+                  tableObj.style = "font-size:18px";
                   tableObj.innerHTML = currentTableHTML;
             });
             
