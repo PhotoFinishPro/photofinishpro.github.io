@@ -103,6 +103,7 @@ async function loadJsonFile() {
                         const brObj = document.createElement("br");
                         const packages = document.createElement("select");
                         packages.id = "packages";
+                        packages.style = "font-size:18px";
                         for(var i = 0; i < jsonData.XC[0].Packages.length; i++){
                               var thisPrice = "";
                               if(jsonData.XC[0].Packages[i].price == 0){
