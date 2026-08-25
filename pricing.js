@@ -137,9 +137,11 @@ async function loadJsonFile() {
                                     thisPrice = "$" + jsonData.XC[0].AddOns[i].price;
                               }
                               addOn.id = jsonData.XC[0].AddOns[i].name;
+                              addOn.style = "font-size:18px";
                               const labelAdd = document.createElement("label");
                               labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + thisPrice;
                               labelAdd.htmlFor = jsonData.XC[0].AddOns[i].name;
+                              labelAdd.style = "font-size:18px";
                               //formObj.style.whiteSpace = "pre-line";
                               formObj.appendChild(addOn);
                               formObj.appendChild(labelAdd);
