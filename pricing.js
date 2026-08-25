@@ -139,6 +139,7 @@ async function loadJsonFile() {
                               addOn.id = jsonData.XC[0].AddOns[i].name;
                               const labelAdd = document.createElement("label");
                               labelAdd.innerHTML = jsonData.XC[0].AddOns[i].name + " -- " + thisPrice;
+                              labelAdd.htmlFor = jsonData.XC[0].AddOns[i].name;
                               //formObj.style.whiteSpace = "pre-line";
                               formObj.appendChild(addOn);
                               formObj.appendChild(labelAdd);
