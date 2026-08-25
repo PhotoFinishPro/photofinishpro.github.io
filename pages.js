@@ -13,7 +13,7 @@ async function loadJsonFile() {
     // Parse the JSON response into a JavaScript object
     const jsonData = await response.json();
     for(var i = 0; i < jsonData.pages.length; i++){
-      currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "'>" + jsonData.pages[i].title + "</a></li>";
+      currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "'>" + jsonData.pages[i].title + "</a></li>";
     }
     menu.innerHTML = currentMenuHtml;
   console.log('Loaded JSON data:', jsonData);
