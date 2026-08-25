@@ -35,10 +35,27 @@
     <fieldset>
         <h4>Price Estimator:</h4>
         <form id="estimator_form_container">
-            <h3>In Progress. This feature is not available right now. Check back soon!</h3>
-            <h5>Questions? Email PhotoFinishProTiming@gmail.com</h5>
+            <!--<h3>In Progress. This feature is not available right now. Check back soon!</h3>
+            <h5>Questions? Email PhotoFinishProTiming@gmail.com</h5>-->
+            <label for="contact_name">Name:</label><br>
+            <input type="text" id="contact_name" style="font-size:18px" required><br><br>
+ 
+            <label for="contact_email">Email:</label><br>
+            <input type="email" id="contact_email" style="font-size:18px" required><br><br>
+ 
+            <label for="contact_event_name">Event Name:</label><br>
+            <input type="text" id="contact_event_name" style="font-size:18px"><br><br>
+ 
+            <label for="contact_event_date">Event Date:</label><br>
+            <input type="date" id="contact_event_date" style="font-size:18px"><br><br>
+ 
+            <label for="contact_event_location">Event Location:</label><br>
+            <input type="text" id="contact_event_location" style="font-size:18px"><br><br>
+ 
+            <label for="contact_miles">Estimated Miles to Event (round trip our timer travels):</label><br>
+            <input type="number" id="contact_miles" min="0" style="font-size:18px"><br><br>
             <div id="estimator_form"></div>
-            <input type="submit">
+            <input type="submit" value="Get Quote!">
         </form>
     </fieldset>
     <!--<a href="#tf">Jump to TF Pricing</a>-->
