@@ -16,7 +16,7 @@ async function loadJsonFile() {
     console.log(pathList);
     for(var i = 0; i < jsonData.pages.length; i++){
       if(pathList[1] == jsonData.pages[i].link){
-        currentMenuHtml += "<li style='background-color:lightgrey;color:black'><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "'>" + jsonData.pages[i].title + "</a></li>";
+        currentMenuHtml += "<li style='background-color:lightgrey'><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "' style='color:black'>" + jsonData.pages[i].title + "</a></li>";
       } else {
         currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "'>" + jsonData.pages[i].title + "</a></li>";
       }
