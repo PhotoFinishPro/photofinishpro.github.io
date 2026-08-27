@@ -220,13 +220,13 @@
                     "sample": "No Sample Image Available Yet"
                 },
                 {
-                    "name": "Lap Counter",
+                    "name": "Digital Lap Counter",
                     "price": 140,
                     "alt_price": null,
                     "add_on": null,
                     "multiple": false,
                     "split_add": false,
-                    "description": "Digital Sign to show laps left for distance track competitors",
+                    "description": "Digital Sign to show laps left for distance track competitors (If the venue prefers an analog lap counter, and can provide one, we will operate it for free)",
                     "sample":"No Sample Image Available Yet"
                 },
                 {
