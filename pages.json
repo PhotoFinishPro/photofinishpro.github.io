@@ -15,11 +15,11 @@
       "link": "software.html",
       "target": "_self"
     },
-    /*{
-      "title": "About",
-      "link": "about.html",
-      "target": "_self"
-    },*/
+    //{
+      //"title": "About",
+      //"link": "about.html",
+      //"target": "_self"
+    //},
     {
       "title": "Our Crew",
       "link": "crew.html",
