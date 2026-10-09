@@ -71,16 +71,6 @@
                     "split_add": false,
                     "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event",
                     "sample":"No Sample Meet Available Yet"
-                },
-                {
-                    "name": "Professional",
-                    "price": 590,
-                    "alt_price": "$180 per split location",
-                    "add_on": 180,
-                    "multiple": false,
-                    "split_add": true,
-                    "description": "One Primary and One Backup system, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons Included: Live Results, Finish Line Image Export, Split Locations, Digital Scoreboard, Race Videos",
-                    "sample": "No Sample Meet Available Yet"
                 }
             ],
             "AddOns": [
@@ -103,26 +93,6 @@
                     "split_add": false,
                     "description": "Finish Line Images exported to results.",
                     "sample": "No Sample Event Available Yet"
-                },
-                {
-                    "name": "Split Location (Requires Live Results)",
-                    "price": 200,
-                    "alt_price": null,
-                    "add_on": null,
-                    "multiple": true,
-                    "split_add": false,
-                    "description": "Timed splits during races. (Multiple splits can be scored from one location, as long as runners pass this location at the distances needed for the splits).",
-                    "sample": "<a href='https://live.athletic.net/meets/75073/events/xc/2898822' target='_blank'>MVHS All-Comers XC</a>"
-                },
-                {
-                    "name": "Digital Scoreboard",
-                    "price": 150,
-                    "alt_price": null,
-                    "add_on": null,
-                    "multiple": false,
-                    "split_add": false,
-                    "description": "Full-size scoreboard at finish line, showing event results",
-                    "sample": "No Sample Image Available Yet"
                 },
                 {
                     "name": "Race Videos",
@@ -166,16 +136,6 @@
                     "split_add": false,
                     "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Paper Field Event Scoring, unless Live Field Results Package",
                     "sample":"No Sample Meet Available Yet"
-                },
-                {
-                    "name": "Professional",
-                    "price": 580,
-                    "alt_price": "$180 per enroute location",
-                    "add_on": 180,
-                    "multiple": false,
-                    "split_add": true,
-                    "description": "One Primary and One Backup System, each with 2 cameras<br>Official Results Published After Each Event<br>Add-Ons: Live Track Results, Live Field Results, Enroute Timing, Race Videos, Field Event Videos, Lap Counter, Digital Scoreboard.",
-                    "sample":"No Sample Meet Available Yet"
                 }
             ],
             "AddOns": [
@@ -198,36 +158,6 @@
                     "split_add": false,
                     "description": "Live Attempt-By-Attempt Field Results through AthleticLIVE. Uses AthleticFIELD app.",
                     "sample":"No Sample Event Available Yet"
-                },
-                {
-                    "name": "Enroute Timing",
-                    "price": 200,
-                    "alt_price": null,
-                    "add_on": null,
-                    "multiple": true,
-                    "split_add": false,
-                    "description": "Enroute timed results for events. Example: 3200m race would have enroute 3000m times.",
-                    "sample":"No Sample Event Available Yet"
-                },
-                {
-                    "name": "Digital Scoreboard",
-                    "price": 150,
-                    "alt_price": null,
-                    "add_on": null,
-                    "multiple": false,
-                    "split_add": false,
-                    "description": "Full-size scoreboard at finish line, showing event results",
-                    "sample": "No Sample Image Available Yet"
-                },
-                {
-                    "name": "Digital Lap Counter",
-                    "price": 140,
-                    "alt_price": null,
-                    "add_on": null,
-                    "multiple": false,
-                    "split_add": false,
-                    "description": "Digital Sign to show laps left for distance track competitors (If the venue prefers an analog lap counter, and can provide one, we will operate it for free)",
-                    "sample":"No Sample Image Available Yet"
                 },
                 {
                     "name": "Race Videos",
