@@ -18,7 +18,7 @@ async function loadJsonFile() {
       if(pathList[1] == jsonData.pages[i].link){
         currentMenuHtml += "<li style='background-color:lightgrey'><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "' style='color:black'><i class='" + jsonData.pages[i].icon_code + "'></i>" + jsonData.pages[i].title + "</a></li>";
       } else {
-        currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "'>" + jsonData.pages[i].title + "</a></li>";
+        currentMenuHtml += "<li><a href='" + jsonData.pages[i].link + "' target='" + jsonData.pages[i].target + "'><i class='" + jsonData.pages[i].icon_code + "'></i>" + jsonData.pages[i].title + "</a></li>";
       }
     }
     menu.innerHTML = currentMenuHtml;
