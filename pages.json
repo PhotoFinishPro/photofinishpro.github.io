@@ -3,42 +3,50 @@
     {
       "title": "Home",
       "link": "index.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-house"
     },
     {
       "title": "Our Services",
       "link": "services.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-toolbox"
     },
     {
       "title": "Our Software",
       "link": "software.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-code"
     },
     {
       "title": "About Us",
       "link": "crew.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-people-group"
     },
     {
       "title": "Booking & Pricing",
       "link": "pricing.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-cart-shopping"
     },
     {
       "title": "Upcoming Meets",
       "link": "upcoming.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-calendar"
     },
     {
       "title": "How We Time",
       "link": "timing.html",
-      "target": "_self"
+      "target": "_self",
+      "icon_code": "fa-solid fa-stopwatch"
     },
     {
       "title": "AthleticNET",
       "link": "https://www.athletic.net/team/100235/track-and-field-outdoor/2026",
-      "target": "_blank"
+      "target": "_blank",
+      "icon_code": "fa-solid fa-person-running"
     }
   ]
 }
