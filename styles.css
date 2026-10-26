@@ -4,43 +4,38 @@
   box-sizing: border-box;
   font-family: Tahoma, sans-serif;
 }
-.crewphoto {
-  width: auto;
-  height: 10%; /* Maintains original aspect ratio */
-  padding: 0px !important;
-}
-.bannerphoto {
-  width: 100vw;
-  height: auto; /* Maintains original aspect ratio */
-  display: block; /* Prevents whitespace gaps at the bottom */
-  padding: 0px !important;
-}
-body {
-  padding: 0px;
-  background-color: lightgrey;
 
+body {
+  background-color: lightgrey;
 }
-head {
-  padding: 0px !important;
-}
+
 .info {
   padding: 10px;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
+/* Photos used on other pages */
+.crewphoto,
+.bannerphoto {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.bannerphoto {
+  width: 100%;
+}
+
+/* Navigation menu (scoped to #menu so other lists aren't affected) */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
   background-color: #333333;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
-ul li {
-  float: left;
-}
-
-ul li a {
+#menu li a {
   display: block;
   color: white;
   text-align: center;
@@ -48,70 +43,74 @@ ul li a {
   text-decoration: none;
 }
 
-ul li a:hover {
+#menu li a:hover,
+#menu li a:focus-visible {
   background-color: #111111;
 }
 
+/* Carousel */
 .carousel-container {
   position: relative;
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
-  overflow: hidden; /* Hides extra images */
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.4s ease-in-out;
-  gap: 15px; /* Space between images */
-  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel-slide {
-  /* Calculate width to show exactly 3 images at once while minding the gaps */
-  flex: 0 0 calc((100% - (15px * 2)) / 3); 
-  box-sizing: border-box;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  aspect-ratio: 16 / 9;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 8px;
 }
 
-/* Navigation Buttons */
+/* Show the banner whole instead of cropping it */
+.carousel-slide.banner img {
+  object-fit: contain;
+}
+
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
   font-size: 18px;
-  border-radius: 50%;
+  cursor: pointer;
 }
-
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .prev-btn { left: 15px; }
 .next-btn { right: 15px; }
-.carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
 
-/* Responsive adjustments for smaller devices */
-@media (max-width: 768px) {
-  .carousel-slide {
-    /* Show 2 images on tablets */
-    flex: 0 0 calc((100% - 15px) / 2);
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    scroll-behavior: auto;
   }
 }
 
-@media (max-width: 480px) {
-  .carousel-slide {
-    /* Show 1 image on mobile phones */
-    flex: 0 0 100%;
-  }
-}
-
+/* Tables */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -127,9 +126,12 @@ td, th {
 tr:nth-child(even) {
   background-color: #adadad;
 }
+
 .checked {
   color: orange;
 }
+
+/* Footer */
 .site-footer {
   display: flex;
   flex-direction: column;
@@ -142,8 +144,6 @@ tr:nth-child(even) {
   border-top: 1px solid #e5e7eb;
 }
 
-.site-footer p { margin: 0; }
-
 .social {
   display: flex;
   gap: 1.25rem;
@@ -152,7 +152,7 @@ tr:nth-child(even) {
 .social a {
   display: grid;
   place-items: center;
-  width: 2.75rem;          /* comfortable tap target */
+  width: 2.75rem; /* comfortable tap target */
   height: 2.75rem;
   font-size: 1.25rem;
   color: inherit;
