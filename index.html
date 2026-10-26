@@ -13,21 +13,16 @@
 <script src="pages.js"></script>
 
 <body>
-    <img class="bannerphoto" src="PhotoFinishPro.png">
-    <div class="carousel-container">
-    <div class="carousel-track">
-        <div class="carousel-slide"><img src="crew.jpg" alt="Slide 1"></div>
-        <div class="carousel-slide"><img src="finishline.jpg" alt="Slide 2"></div>
-        <div class="carousel-slide"><img src="https://t3.ftcdn.net/jpg/01/06/35/10/360_F_106351000_zAKAtrLtqqlUctsca92nlYSMOwHFgl2V.jpg" alt="Slide 3"></div>
-        <div class="carousel-slide"><img src="https://i.etsystatic.com/11631326/r/il/998fa6/1338086653/il_fullxfull.1338086653_l616.jpg" alt="Slide 4"></div>
-        <div class="carousel-slide"><img src="https://thumbs.dreamstime.com/b/running-track-clouds-7135249.jpg" alt="Slide 5"></div>
-        <div class="carousel-slide"><img src="https://picsum.photos" alt="Slide 6"></div>
-    </div>
+    <div class="carousel-container" role="region" aria-roledescription="carousel" aria-label="PhotoFinishPro photos">
+        <div class="carousel-track">
+            <div class="carousel-slide banner"><img src="PhotoFinishPro.png" alt="PhotoFinishPro Timing logo"></div>
+            <div class="carousel-slide"><img src="crew.jpg" alt="The PhotoFinishPro timing crew"></div>
+            <div class="carousel-slide"><img src="finishline.jpg" alt="Athletes crossing the finish line"></div>
+        </div>
 
-    <button class="carousel-btn prev-btn">&#10094;</button>
-    <button class="carousel-btn next-btn">&#10095;</button>
+        <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-btn next-btn" aria-label="Next slide">&#10095;</button>
     </div>
-
 
     <iframe allowtransparency='true' frameborder='0' height='500' scrolling='no' src='https://www.strava.com/clubs/2245586/latest-rides/3e0344182107ed83cd916d5f280c8e6cad0965d0?show_rides=false' width='300'></iframe>
     <h1 class="info">Who are we?:</h1>
@@ -35,47 +30,19 @@
     <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
     <script>
         const track = document.querySelector('.carousel-track');
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        const slides = document.querySelectorAll('.carousel-slide');
 
-        let currentIndex = 0;
-
-        function updateCarousel() {
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = 15; // Must match the CSS gap property
-        
-        // Shift track based on slide width plus spacing gap
-        const amountToMove = currentIndex * (slideWidth + gap);
-        track.style.transform = `translateX(-${amountToMove}px)`;
+        function go(direction) {
+            const w = track.clientWidth;
+            const last = track.scrollWidth - w;
+            const next = track.scrollLeft + direction * w;
+            // Loop around at either end
+            if (next > last + 1) track.scrollTo({ left: 0 });
+            else if (next < 0) track.scrollTo({ left: last });
+            else track.scrollTo({ left: next });
         }
 
-        nextBtn.addEventListener('click', () => {
-        // Determine how many items are currently visible on screen
-        const itemsVisible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
-        
-        // Prevent scrolling past the last available visible set
-        if (currentIndex < slides.length - itemsVisible) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Optional loop back to start
-        }
-        updateCarousel();
-        });
-
-        prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            // Optional loop to the end
-            const itemsVisible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
-            currentIndex = slides.length - itemsVisible;
-        }
-        updateCarousel();
-        });
-
-        // Re-calculate math properly if the browser window changes dimensions
-        window.addEventListener('resize', updateCarousel);
+        document.querySelector('.next-btn').addEventListener('click', () => go(1));
+        document.querySelector('.prev-btn').addEventListener('click', () => go(-1));
     </script>
     <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
@@ -91,4 +58,4 @@
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
 </footer>
-</body>
+</body></html>
