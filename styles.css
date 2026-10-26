@@ -120,6 +120,35 @@ body {
 .prev-btn { left: 15px; }
 .next-btn { right: 15px; }
 
+/* About section + Strava widget */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 960px;
+  margin: 1rem auto;
+  padding: 0 10px;
+}
+
+.about-text {
+  flex: 1 1 320px;
+}
+
+.strava {
+  flex: 0 0 300px;
+  max-width: 100%;
+}
+
+.strava iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 0;
+  border-radius: 8px;
+  background-color: white;
+}
+
 /* Tables */
 table {
   font-family: arial, sans-serif;
