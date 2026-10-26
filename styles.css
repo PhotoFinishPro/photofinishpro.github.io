@@ -130,3 +130,38 @@ tr:nth-child(even) {
 .checked {
   color: orange;
 }
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+.site-footer p { margin: 0; }
+
+.social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;          /* comfortable tap target */
+  height: 2.75rem;
+  font-size: 1.25rem;
+  color: inherit;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.social a:hover,
+.social a:focus-visible {
+  color: #111827;
+  background-color: #f3f4f6;
+}
