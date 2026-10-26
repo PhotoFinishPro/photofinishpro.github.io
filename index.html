@@ -15,10 +15,22 @@
 <body>
     <div class="carousel-container" role="region" aria-roledescription="carousel" aria-label="PhotoFinishPro photos">
         <div class="carousel-track">
-            <div class="carousel-slide banner"><img src="PhotoFinishPro.png" alt="PhotoFinishPro Timing logo"></div>
-            <div class="carousel-slide"><img src="crew.jpg" alt="The PhotoFinishPro timing crew"></div>
-            <div class="carousel-slide"><img src="finishline.jpg" alt="Finish line setup"></div>
-            <div class="carousel-slide"><img src="sample_linescan.png" alt="Our software"></div>
+            <figure class="carousel-slide banner">
+                <img src="PhotoFinishPro.png" alt="PhotoFinishPro Timing logo">
+                <figcaption>Track and cross country timing from Bend, Oregon</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+                <img src="crew.jpg" alt="The PhotoFinishPro timing crew">
+                <figcaption>Our timing crew</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+                <img src="finishline.jpg" alt="Finish line setup">
+                <figcaption>Finish line setup</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+                <img src="sample_linescan.png" alt="Our software">
+                <figcaption>Our software, with results ready to upload to Athletic.net and Athletic.live</figcaption>
+            </figure>
         </div>
 
         <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
@@ -31,15 +43,15 @@
     <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
     <script>
         const track = document.querySelector('.carousel-track');
+        const slides = track.children;
 
+        // Work out the current slide from the scroll position, so swipes,
+        // fast taps and fractional mobile widths can't throw it off.
         function go(direction) {
             const w = track.clientWidth;
-            const last = track.scrollWidth - w;
-            const next = track.scrollLeft + direction * w;
-            // Loop around at either end
-            if (next > last + 1) track.scrollTo({ left: 0 });
-            else if (next < 0) track.scrollTo({ left: last });
-            else track.scrollTo({ left: next });
+            const current = Math.round(track.scrollLeft / w);
+            const next = (current + direction + slides.length) % slides.length;
+            track.scrollTo({ left: next * w, behavior: 'smooth' });
         }
 
         document.querySelector('.next-btn').addEventListener('click', () => go(1));
