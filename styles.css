@@ -143,7 +143,7 @@ body {
 .strava iframe {
   display: block;
   width: 100%;
-  height: 500px;
+  height: 300px; /* adjust to taste */
   border: 0;
   border-radius: 8px;
   background-color: white;
