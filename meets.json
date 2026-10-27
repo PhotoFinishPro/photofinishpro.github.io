@@ -1,0 +1,34 @@
+{
+  "meets": [
+    {
+      "name": "Timer Training 3",
+      "date": "2026-07-23",
+      "location": "Local Track, TBD",
+      "description": "Testing out our software and AthleticLIVE. 400m, 800m, and 1600m available.",
+      "links": [
+        { "label": "AthleticNET & Registration", "url": "https://www.athletic.net/TrackAndField/meet/670727" },
+        { "label": "AthleticLIVE", "url": "https://live.athletic.net/meets/75071" }
+      ]
+    },
+    {
+      "name": "XC Timer Training",
+      "date": "2026-08-03",
+      "location": "Timing HQ, TBD",
+      "description": "Testing out our software and AthleticLIVE. 1M and 5k available.",
+      "links": [
+        { "label": "AthleticNET & Registration", "url": "https://www.athletic.net/TrackAndField/meet/277544" },
+        { "label": "AthleticLIVE", "url": "https://live.athletic.net/meets/75626" }
+      ]
+    },
+    {
+      "name": "All-Comers Cross Country Meet 2026",
+      "date": "2027-08-08",
+      "location": "20210 Mountain View Drive, Bend, OR",
+      "description": "Join us for this Cross Country Event benefiting the Mountain View High School Cross Country Program. 1M and 5000m events are available.",
+      "links": [
+        { "label": "AthleticNET & Registration", "url": "https://www.athletic.net/CrossCountry/meet/275576/info" },
+        { "label": "AthleticLIVE", "url": "https://live.athletic.net/meets/75073" }
+      ]
+    }
+  ]
+}
