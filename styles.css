@@ -531,6 +531,58 @@ body {
   cursor: pointer;
 }
 
+/* Numbered process steps (How We Time) */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+}
+
+.steps li {
+  position: relative;
+  counter-increment: step;
+  margin-bottom: 0.75rem;
+  padding: 1rem 1rem 1rem 3.5rem;
+  background-color: white;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: #333333;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.step-figure {
+  margin-top: 1rem;
+}
+
+.step-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.step-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  text-align: center;
+}
+
 /* Testimonials */
 .review {
   padding: 1rem;
