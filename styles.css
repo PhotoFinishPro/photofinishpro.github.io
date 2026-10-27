@@ -149,6 +149,40 @@ body {
   background-color: white;
 }
 
+/* Content pages (services, etc.) */
+.page {
+  max-width: 960px;
+  margin: 1rem auto;
+  padding: 0 10px;
+}
+
+.page h1,
+.page h2 {
+  padding: 10px 0;
+}
+
+.services {
+  padding: 0 0 1rem 1.5rem;
+  line-height: 1.8;
+}
+
+/* Testimonials */
+.review {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.review figcaption {
+  font-weight: bold;
+}
+
+.reviewer {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
 /* Tables */
 table {
   font-family: arial, sans-serif;
