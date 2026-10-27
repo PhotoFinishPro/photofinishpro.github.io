@@ -13,23 +13,37 @@
 <script src="pages.js"></script>
 
 <body>
-  <h1>Changelog</h1>
-  <fieldset>
-    <h3>v1.1.0 (Oct. 18th, 2026)</h3>
-      <p>Changes include:</p>
-      <p>&bull; Accurate running clock that will not buffer if scoreboard communication is slow.</p>
-      <p>&bull; Splits can now be defined and changed for custom split layouts.</p>
-      <p>&bull; Fixed a buffering issue that led to delayed writing of photo finish images.</p>
-      <p>&bull; If you end the race accidentally or have a technical difficulty, you can now reload a race from its original start time.</p>
-      <p>&bull; You can now opt to assign times from athletes' bib numbers instead of the lanes they are running in.</p>
-  </fieldset>
-    <fieldset>
-    <h3>v1.0.0 (Sep. 13th, 2026)</h3>
-      <p>&bull; First public release of PhotoFinishPro Fully Automatic Timing.</p>
-      <p>&bull; Track & Field Timing Functionality</p>
-      <p>&bull; Limited Cross Country Timing Functionality. Expanded XC functionality is planned for a future update.</p>
-  </fieldset>
-    <a href="software.html">Check out our software products.</a>
+    <main class="page">
+        <h1>Changelog</h1>
+        <p><a href="software.html">&larr; Back to our software products</a></p>
+
+        <!-- Newest release first. Copy a card to add a new version. -->
+        <div class="releases">
+            <article class="product">
+                <h2>v1.1.0 (<time datetime="2026-10-18">Oct. 18th, 2026</time>)</h2>
+                <p>Changes include:</p>
+                <ul>
+                    <li>Accurate running clock that will not buffer if scoreboard communication is slow.</li>
+                    <li>Splits can now be defined and changed for custom split layouts.</li>
+                    <li>Fixed a buffering issue that led to delayed writing of photo finish images.</li>
+                    <li>If you end the race accidentally or have a technical difficulty, you can now reload a race from its original start time.</li>
+                    <li>You can now opt to assign times from athletes' bib numbers instead of the lanes they are running in.</li>
+                </ul>
+            </article>
+
+            <article class="product">
+                <h2>v1.0.0 (<time datetime="2026-09-13">Sep. 13th, 2026</time>)</h2>
+                <ul>
+                    <li>First public release of PhotoFinishPro Fully Automatic Timing.</li>
+                    <li>Track &amp; Field Timing Functionality</li>
+                    <li>Limited Cross Country Timing Functionality. Expanded XC functionality is planned for a future update.</li>
+                </ul>
+            </article>
+        </div>
+
+        <p><a href="software.html">Check out our software products.</a></p>
+    </main>
+
     <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
         <a href="https://www.instagram.com/photofinishpro_timing/"
@@ -41,7 +55,13 @@
            aria-label="Email PhotoFinishPro Timing">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         </a>
+        <a href="https://www.youtube.com/@PhotoFinishProTiming"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="PhotoFinishPro Timing on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
-</footer>
+    </footer>
 </body>
+</html>
