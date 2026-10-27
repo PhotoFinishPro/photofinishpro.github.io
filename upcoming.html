@@ -16,53 +16,20 @@
     <img class="bannerphoto" src="PhotoFinishPro.png" alt="PhotoFinishPro Timing logo">
 
     <main class="page">
-
-        <!-- Meet cards: uncomment and edit for each upcoming meet. Past examples below.
-        <div class="products">
-            <article class="product">
-                <h2>Timer Training 3</h2>
-                <p>Testing out our software and AthleticLIVE. 400m, 800m, and 1600m available.</p>
-                <p>
-                    <a href="https://www.athletic.net/TrackAndField/meet/670727">AthleticNET &amp; Registration</a><br>
-                    <a href="https://live.athletic.net/meets/75071">AthleticLIVE</a>
-                </p>
-                <p><strong>Location:</strong> Local Track, TBD<br><strong>Date:</strong> July 23rd, 2026</p>
-                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
-            </article>
-
-            <article class="product">
-                <h2>XC Timer Training</h2>
-                <p>Testing out our software and AthleticLIVE. 1M and 5k available.</p>
-                <p>
-                    <a href="https://www.athletic.net/TrackAndField/meet/277544">AthleticNET &amp; Registration</a><br>
-                    <a href="https://live.athletic.net/meets/75626">AthleticLIVE</a>
-                </p>
-                <p><strong>Location:</strong> Timing HQ, TBD<br><strong>Date:</strong> August 3rd, 2026</p>
-                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
-            </article>
-
-            <article class="product">
-                <h2>All-Comers Cross Country Meet 2026</h2>
-                <p>Join us August 8th for this Cross Country Event benefiting the Mountain View High School Cross Country Program. 1M and 5000m events are available.</p>
-                <p>
-                    <a href="https://www.athletic.net/CrossCountry/meet/275576/info">AthleticNET &amp; Registration</a><br>
-                    <a href="https://live.athletic.net/meets/75073">AthleticLIVE</a>
-                </p>
-                <p><strong>Location:</strong> 20210 Mountain View Drive, Bend, OR<br><strong>Date:</strong> August 8th, 2026</p>
-                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
-            </article>
+        <h1>Upcoming Meets:</h1>
+        <div id="upcoming_meets" class="products" aria-live="polite">
+            <p class="meets-message">Loading meets...</p>
         </div>
-        -->
+        <noscript>
+            <p>Please turn on JavaScript to see our meet schedule, or email <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a>.</p>
+        </noscript>
 
-        <div class="calendar">
-            <!-- The script below picks the calendar view: a readable agenda list on phones, the month grid on larger screens. -->
-            <iframe id="meet_calendar" title="PhotoFinishPro Timing meet calendar"></iframe>
-            <noscript>
-                <p><a href="https://calendar.google.com/calendar/embed?src=26fb2a09c082f4cda3c194bc1d7d50b3c4f8b67b3778ef7bd387764259e70b0a%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles">Open the meet calendar</a></p>
-            </noscript>
-        </div>
+        <details id="past_wrap" class="past-meets" hidden>
+            <summary>Past meets</summary>
+            <div id="past_meets" class="products"></div>
+        </details>
 
-        <h1>Meets:</h1>
+        <h1>Book a Meet:</h1>
         <p>Now booking meets for the 2027 Track &amp; Field season. To book a meet, contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a> or go to the <a href="pricing.html">Booking &amp; Pricing page</a>.</p>
     </main>
 
@@ -87,11 +54,118 @@
     </footer>
 
     <script>
-        var calendarUrl = "https://calendar.google.com/calendar/embed?src=26fb2a09c082f4cda3c194bc1d7d50b3c4f8b67b3778ef7bd387764259e70b0a%40group.calendar.google.com&ctz=America%2FLos_Angeles";
-        if (window.matchMedia("(max-width: 600px)").matches) {
-            calendarUrl += "&mode=AGENDA";
-        }
-        document.getElementById("meet_calendar").src = calendarUrl;
+        // Meets come from meets.json. Upcoming meets show as cards; meets whose date has passed move to "Past meets".
+        (function () {
+            var upcomingEl = document.getElementById("upcoming_meets");
+            var pastWrap = document.getElementById("past_wrap");
+            var pastEl = document.getElementById("past_meets");
+
+            // "2026-07-23" -> local date (avoids time zone shifting the day)
+            function parseDate(str) {
+                var p = str.split("-");
+                return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+            }
+
+            function el(tag, className, text) {
+                var node = document.createElement(tag);
+                if (className) node.className = className;
+                if (text) node.textContent = text;
+                return node;
+            }
+
+            function dateLabel(meet) {
+                var start = parseDate(meet.date);
+                if (meet.endDate) {
+                    var end = parseDate(meet.endDate);
+                    return start.toLocaleDateString("en-US", { month: "long", day: "numeric" }) + " \u2013 " +
+                           end.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+                }
+                return start.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+            }
+
+            function buildCard(meet) {
+                var card = el("article", "product");
+                card.appendChild(el("h2", null, meet.name));
+
+                var when = el("p");
+                var time = document.createElement("time");
+                time.dateTime = meet.date;
+                time.textContent = dateLabel(meet);
+                when.appendChild(time);
+                if (meet.time) when.appendChild(document.createTextNode(" \u00b7 " + meet.time));
+                card.appendChild(when);
+
+                if (meet.location) {
+                    var where = el("p");
+                    where.appendChild(el("strong", null, "Location: "));
+                    where.appendChild(document.createTextNode(meet.location));
+                    card.appendChild(where);
+                }
+
+                if (meet.description) card.appendChild(el("p", null, meet.description));
+
+                if (meet.links && meet.links.length) {
+                    var links = el("p");
+                    meet.links.forEach(function (link, i) {
+                        if (i > 0) links.appendChild(document.createElement("br"));
+                        var a = el("a", null, link.label);
+                        a.href = link.url;
+                        a.target = "_blank";
+                        a.rel = "noopener noreferrer";
+                        links.appendChild(a);
+                    });
+                    card.appendChild(links);
+                }
+                return card;
+            }
+
+            function render(meets) {
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                var upcoming = [];
+                var past = [];
+                meets.forEach(function (meet) {
+                    if (!meet.name || !meet.date) {
+                        console.warn("Skipping a meet with no name or date:", meet);
+                        return;
+                    }
+                    var lastDay = parseDate(meet.endDate || meet.date);
+                    (lastDay >= today ? upcoming : past).push(meet);
+                });
+
+                upcoming.sort(function (a, b) { return parseDate(a.date) - parseDate(b.date); });
+                past.sort(function (a, b) { return parseDate(b.date) - parseDate(a.date); });
+
+                upcomingEl.innerHTML = "";
+                if (upcoming.length === 0) {
+                    upcomingEl.appendChild(el("p", "meets-message", "No meets are scheduled right now. Check back soon, or book one below!"));
+                }
+                upcoming.forEach(function (meet) { upcomingEl.appendChild(buildCard(meet)); });
+
+                if (past.length > 0) {
+                    past.forEach(function (meet) { pastEl.appendChild(buildCard(meet)); });
+                    pastWrap.hidden = false;
+                }
+            }
+
+            fetch("meets.json")
+                .then(function (response) {
+                    if (!response.ok) throw new Error("HTTP " + response.status);
+                    return response.json();
+                })
+                .then(function (data) { render(data.meets || []); })
+                .catch(function (error) {
+                    console.error("Could not load meets.json:", error);
+                    upcomingEl.innerHTML = "";
+                    var msg = el("p", "meets-message", "We couldn't load the meet list. Please email ");
+                    var mail = el("a", null, "PhotoFinishProTiming@gmail.com");
+                    mail.href = "mailto:PhotoFinishProTiming@gmail.com";
+                    msg.appendChild(mail);
+                    msg.appendChild(document.createTextNode(" for upcoming meets."));
+                    upcomingEl.appendChild(msg);
+                });
+        })();
     </script>
 </body>
 </html>
