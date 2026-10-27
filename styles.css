@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: lightgrey;
+  background-color: #eef1f5;
 }
 
 .info {
@@ -608,13 +608,13 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #c9ced6;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #adadad;
+  background-color: #dde1e7;
 }
 
 .checked {
@@ -630,8 +630,8 @@ tr:nth-child(even) {
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
+  color: #4b5563;
+  border-top: 1px solid #d1d5db;
 }
 
 .social {
@@ -653,5 +653,14 @@ tr:nth-child(even) {
 .social a:hover,
 .social a:focus-visible {
   color: #111827;
-  background-color: #f3f4f6;
+  background-color: #dde1e7;
+}
+
+/* Soft shadow so white cards stand out on the lighter background */
+.member,
+.product,
+.review,
+.estimator,
+.steps li {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
