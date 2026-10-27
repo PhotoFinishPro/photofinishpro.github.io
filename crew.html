@@ -12,33 +12,52 @@
 <script src="pages.js"></script>
 
 <body>
-    <h1>Our Mission:</h1>
-    <p>PhotoFinishPro Timing, based in Central Oregon, delivers fast, accurate timing results for athletes at every level across the region. We are a community-driven company building affordable, easy-to-use timing solutions for competitors, coaches, spectators, and race organizers.</p>
-    <!--<img style="display:block; margin:50 auto;" src="crew2.jpeg">-->
-    <h1>Our Crew:</h1>
-    <table>
-        <tr>
-            <td><img src="bMedina2.jpeg" style="height: 200px"></td>
-            <td><h3>Brendan Medina</h3></td>
-            <td>Head Timer & Head Developer<br>Favorite Event: XC 5000m<br>Base of Operations: Bend, OR/Pullman, WA<br>Brendan started timing track meets in his freshman year of high school. Since then, he has timed track, cross country, and developed an application for timing. He runs PhotoFinishPro Timing along with Kevin Mattox and Landon Martin. He's usually the one operating the photo review system and assigning times to athletes.<br>Head Timer at meets like <a href="https://www.athletic.net/CrossCountry/meet/275576/info">MVHS All-Comers XC</a> and <a href="https://www.athletic.net/TrackAndField/meet/672138/results">Timer Training 3</a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><h3>Kevin Mattox</h3></td>
-            <td>Timer & Head of Mechanical<br>Favorite Event:<br>Base of Operations: Bend, OR<br>Head Timer at meets like <a href="https://www.athletic.net/TrackAndField/meet/670727/results">Timer Training 2</a></td>
-        </tr>
-        <tr>
-            <td><img src="lMartin.jpg" style="height: 200px"></td>
-            <td><h3>Landon Martin</h3></td>
-            <td>Timer & Head of Website<br>Favorite Event: Track 2000m Steeplechase<br>Base of Operations: Bend, OR<br>Landon started running Cross Country in 8th Grade, and is now a varsity athlete for the Mountain View High School Cross Country and Track & Field teams. He's the one who keeps this website running and accurate.</td>
-        </tr>
-        <!--<tr>
-            <td></td>
-            <td><h3>Claire Mattox</h3></td>
-            <td>Creative Consultant<br>Favorite Event:</td>
-        </tr>-->
-    </table>
-    <p>Have any questions for our crew? Feel free to reach out to us at PhotoFinishProTiming@gmail.com, and get a response from one of us!</p>
+    <main class="page">
+        <h1>Our Mission:</h1>
+        <p>PhotoFinishPro Timing, based in Central Oregon, delivers fast, accurate timing results for athletes at every level across the region. We are a community-driven company building affordable, easy-to-use timing solutions for competitors, coaches, spectators, and race organizers.</p>
+
+        <h1>Our Crew:</h1>
+        <div class="crew">
+
+            <article class="member">
+                <img src="bMedina2.jpeg" alt="Brendan Medina" loading="lazy">
+                <div class="member-body">
+                    <h2>Brendan Medina</h2>
+                    <p class="role">Head Timer &amp; Head Developer</p>
+                    <p class="facts"><strong>Favorite Event:</strong> XC 5000m<br><strong>Base of Operations:</strong> Bend, OR / Pullman, WA</p>
+                    <p>Brendan started timing track meets in his freshman year of high school. Since then, he has timed track and cross country, and developed an application for timing. He runs PhotoFinishPro Timing along with Kevin Mattox and Landon Martin. He's usually the one operating the photo review system and assigning times to athletes.</p>
+                    <p class="meets">Head Timer at meets like <a href="https://www.athletic.net/CrossCountry/meet/275576/info" target="_blank" rel="noopener noreferrer">MVHS All-Comers XC</a> and <a href="https://www.athletic.net/TrackAndField/meet/672138/results" target="_blank" rel="noopener noreferrer">Timer Training 3</a></p>
+                </div>
+            </article>
+
+            <article class="member">
+                <!-- When Kevin's photo arrives, replace the placeholder div with:
+                     <img src="kMattox.jpg" alt="Kevin Mattox" loading="lazy"> -->
+                <div class="photo-placeholder" aria-hidden="true">KM</div>
+                <div class="member-body">
+                    <h2>Kevin Mattox</h2>
+                    <p class="role">Timer &amp; Head of Mechanical</p>
+                    <p class="facts"><!-- <strong>Favorite Event:</strong> ???<br> --><strong>Base of Operations:</strong> Bend, OR</p>
+                    <p class="meets">Head Timer at meets like <a href="https://www.athletic.net/TrackAndField/meet/670727/results" target="_blank" rel="noopener noreferrer">Timer Training 2</a></p>
+                </div>
+            </article>
+
+            <article class="member">
+                <img src="lMartin.jpg" alt="Landon Martin" loading="lazy">
+                <div class="member-body">
+                    <h2>Landon Martin</h2>
+                    <p class="role">Timer &amp; Head of Website</p>
+                    <p class="facts"><strong>Favorite Event:</strong> Track 2000m Steeplechase<br><strong>Base of Operations:</strong> Bend, OR</p>
+                    <p>Landon started running Cross Country in 8th Grade, and is now a varsity athlete for the Mountain View High School Cross Country and Track &amp; Field teams. He's the one who keeps this website running and accurate.</p>
+                </div>
+            </article>
+
+            <!-- Claire Mattox, Creative Consultant (copy a card above to add her) -->
+        </div>
+
+        <p class="contact">Have any questions for our crew? Feel free to reach out to us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a>, and get a response from one of us!</p>
+    </main>
+
     <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
         <a href="https://www.instagram.com/photofinishpro_timing/"
@@ -50,7 +69,13 @@
            aria-label="Email PhotoFinishPro Timing">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         </a>
+        <a href="https://www.youtube.com/@PhotoFinishProTiming"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="PhotoFinishPro Timing on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
-</footer>
+    </footer>
 </body>
+</html>
