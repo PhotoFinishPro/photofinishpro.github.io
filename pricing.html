@@ -13,47 +13,66 @@
 <script src="pages.js"></script>
 
 <body>
-    <img style="width:100%" src="finishLine2.jpeg">
-    <h1>Booking:</h1>
-    <p>Contact us at PhotoFinishProTiming@gmail.com for event booking. Let us know date, location, and which package/add-ons you would like. Looking for a different scenario? Reach out with your idea to the same email, we would be happy to figure your meet out with you!</p
-    <br>
-    <h1>Event Pricing:</h1>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="pricing.js" type="module"></script>
-    <h4 id="ALL_costs"></h4>
-    <br>
-    <h5>View Pricing for: </h5><select style="font-size:18px" id="select">
-    </select>
-    <table id="this_pricing_matrix"></table>
-    <br>
-    <fieldset>
-        <h4>Price Estimator:</h4>
-        <h5>Select a sport above, fill this out, and click "Get Quote" to see your total and email it to us.</h5>
-        <form id="estimator_form_container">
-            <label for="contact_name">Name:</label><br>
-            <input type="text" id="contact_name" style="font-size:18px" required><br><br>
+    <img class="hero" src="finishLine2.jpeg" alt="Finish line photo from a PhotoFinishPro timed meet">
 
-            <label for="contact_email">Email:</label><br>
-            <input type="email" id="contact_email" style="font-size:18px" required><br><br>
+    <main class="page">
+        <h1>Booking:</h1>
+        <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a> for event booking. Let us know date, location, and which package/add-ons you would like. Looking for a different scenario? Reach out with your idea to the same email, we would be happy to figure your meet out with you!</p>
 
-            <label for="contact_event_name">Event Name:</label><br>
-            <input type="text" id="contact_event_name" style="font-size:18px"><br><br>
+        <h1>Event Pricing:</h1>
+        <div id="ALL_costs"></div>
 
-            <label for="contact_event_date">Event Date:</label><br>
-            <input type="date" id="contact_event_date" style="font-size:18px"><br><br>
+        <div class="sport-picker">
+            <label for="select">View Pricing for:</label>
+            <select id="select"></select>
+        </div>
 
-            <label for="contact_event_location">Event Location:</label><br>
-            <input type="text" id="contact_event_location" style="font-size:18px"><br><br>
+        <div class="table-scroll">
+            <table id="this_pricing_matrix"></table>
+        </div>
 
-            <label for="contact_miles">Estimated Miles to Event (round trip our timer travels):</label><br>
-            <input type="number" id="contact_miles" min="0" style="font-size:18px"><br><br>
+        <section class="estimator">
+            <h2>Price Estimator:</h2>
+            <p class="hint">Select a sport above, fill this out, and click "Get Quote" to see your total and email it to us.</p>
+            <form id="estimator_form_container">
+                <div class="field">
+                    <label for="contact_name">Name:</label>
+                    <input type="text" id="contact_name" autocomplete="name" required>
+                </div>
 
-            <div id="estimator_form"></div>
+                <div class="field">
+                    <label for="contact_email">Email:</label>
+                    <input type="email" id="contact_email" autocomplete="email" required>
+                </div>
 
-            <input type="submit" value="Get Quote">
-        </form>
-        <h5>Questions? Email PhotoFinishProTiming@gmail.com</h5>
-    </fieldset>
+                <div class="field">
+                    <label for="contact_event_name">Event Name:</label>
+                    <input type="text" id="contact_event_name">
+                </div>
+
+                <div class="field">
+                    <label for="contact_event_date">Event Date:</label>
+                    <input type="date" id="contact_event_date">
+                </div>
+
+                <div class="field">
+                    <label for="contact_event_location">Event Location:</label>
+                    <input type="text" id="contact_event_location">
+                </div>
+
+                <div class="field">
+                    <label for="contact_miles">Estimated Miles to Event (round trip our timer travels):</label>
+                    <input type="number" id="contact_miles" min="0" inputmode="numeric">
+                </div>
+
+                <div id="estimator_form"></div>
+
+                <input type="submit" value="Get Quote">
+            </form>
+            <p class="hint">Questions? Email <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
+        </section>
+    </main>
+
     <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
         <a href="https://www.instagram.com/photofinishpro_timing/"
@@ -65,7 +84,17 @@
            aria-label="Email PhotoFinishPro Timing">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         </a>
+        <a href="https://www.youtube.com/@PhotoFinishProTiming"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="PhotoFinishPro Timing on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
-</footer>
+    </footer>
+
+    <!-- Load order matters: EmailJS first, then the pricing module that uses it -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="pricing.js" type="module"></script>
 </body>
+</html>
