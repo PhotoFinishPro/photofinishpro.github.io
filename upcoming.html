@@ -13,29 +13,60 @@
 <script src="pages.js"></script>
 
 <body>
-    <img class="bannerphoto" src="PhotoFinishPro.png">
-    <!--<fieldset>
-        <h1 class="info">Timer Training 3</h1>
-        <p class="info">Testing out our software and AthleticLIVE. 400m, 800m, and 1600m available. <br><a href="https://www.athletic.net/TrackAndField/meet/670727">AthleticNET & Registration</a><br><a href="https://live.athletic.net/meets/75071?_gl=1*1dvfb0d*_ga*NTk2MTkzNDUxLjE3Njc0NzA5ODE.*_ga_CV6QCFM8SJ*czE3ODM4MjM5OTMkbzE0MiRnMSR0MTc4MzgyNDQwOCRqNDckbDAkaDA.">AthleticLIVE</a></p>
-        <p class="info">Location: Local Track, TBD, July 23rd, 2026</p>
-        <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
-    </fieldset>-->
-    <!--<fieldset>
-        <h1 class="info">XC Timer Training</h1>
-        <p class="info">Testing out our software and AthleticLIVE. 1M and 5k available. <br><a href="https://www.athletic.net/TrackAndField/meet/277544">AthleticNET & Registration</a><br><a href="https://live.athletic.net/meets/75626?_gl=1*w3sjkh*_ga*NTk2MTkzNDUxLjE3Njc0NzA5ODE.*_ga_CV6QCFM8SJ*czE3ODU0NjQ2OTAkbzE3NyRnMSR0MTc4NTQ2NTI0MCRqMTEkbDAkaDA.">AthleticLIVE</a></p>
-        <p class="info">Location: Timing HQ, TBD, August 3rd, 2026</p>
-        <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
-    </fieldset>
-    <fieldset>
-        <h1 class="info">All-Comers Cross Country Meet 2026</h1>
-        <p class="info">Join us August 8th for this Cross Country Event benefiting the Mountain View High School Cross Country Program. 1M and 5000m events are available. <br><a href="https://www.athletic.net/CrossCountry/meet/275576/info">AthleticNET & Registration</a><br><a href="https://live.athletic.net/meets/75073">AthleticLIVE</a></p>
-        <p class="info">Location: 20210 Mountain View Drive, Bend, OR, August 8th, 2026</p>
-        <p class="info">Contact us at PhotoFinishProTiming@gmail.com</p>
-    </fieldset>-->
-    <iframe src="https://calendar.google.com/calendar/embed?src=26fb2a09c082f4cda3c194bc1d7d50b3c4f8b67b3778ef7bd387764259e70b0a%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    <h1>Meets:</h1>
-    <p>Now booking meets for the 2027 Track & Field season. To book a meet, contact us at PhotoFinishProTiming@gmail.com or go to the <a href="pricing.html">Booking & Pricing page.</a></p>
-        <footer class="site-footer">
+    <img class="bannerphoto" src="PhotoFinishPro.png" alt="PhotoFinishPro Timing logo">
+
+    <main class="page">
+
+        <!-- Meet cards: uncomment and edit for each upcoming meet. Past examples below.
+        <div class="products">
+            <article class="product">
+                <h2>Timer Training 3</h2>
+                <p>Testing out our software and AthleticLIVE. 400m, 800m, and 1600m available.</p>
+                <p>
+                    <a href="https://www.athletic.net/TrackAndField/meet/670727">AthleticNET &amp; Registration</a><br>
+                    <a href="https://live.athletic.net/meets/75071">AthleticLIVE</a>
+                </p>
+                <p><strong>Location:</strong> Local Track, TBD<br><strong>Date:</strong> July 23rd, 2026</p>
+                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
+            </article>
+
+            <article class="product">
+                <h2>XC Timer Training</h2>
+                <p>Testing out our software and AthleticLIVE. 1M and 5k available.</p>
+                <p>
+                    <a href="https://www.athletic.net/TrackAndField/meet/277544">AthleticNET &amp; Registration</a><br>
+                    <a href="https://live.athletic.net/meets/75626">AthleticLIVE</a>
+                </p>
+                <p><strong>Location:</strong> Timing HQ, TBD<br><strong>Date:</strong> August 3rd, 2026</p>
+                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
+            </article>
+
+            <article class="product">
+                <h2>All-Comers Cross Country Meet 2026</h2>
+                <p>Join us August 8th for this Cross Country Event benefiting the Mountain View High School Cross Country Program. 1M and 5000m events are available.</p>
+                <p>
+                    <a href="https://www.athletic.net/CrossCountry/meet/275576/info">AthleticNET &amp; Registration</a><br>
+                    <a href="https://live.athletic.net/meets/75073">AthleticLIVE</a>
+                </p>
+                <p><strong>Location:</strong> 20210 Mountain View Drive, Bend, OR<br><strong>Date:</strong> August 8th, 2026</p>
+                <p>Contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a></p>
+            </article>
+        </div>
+        -->
+
+        <div class="calendar">
+            <!-- The script below picks the calendar view: a readable agenda list on phones, the month grid on larger screens. -->
+            <iframe id="meet_calendar" title="PhotoFinishPro Timing meet calendar"></iframe>
+            <noscript>
+                <p><a href="https://calendar.google.com/calendar/embed?src=26fb2a09c082f4cda3c194bc1d7d50b3c4f8b67b3778ef7bd387764259e70b0a%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles">Open the meet calendar</a></p>
+            </noscript>
+        </div>
+
+        <h1>Meets:</h1>
+        <p>Now booking meets for the 2027 Track &amp; Field season. To book a meet, contact us at <a href="mailto:PhotoFinishProTiming@gmail.com">PhotoFinishProTiming@gmail.com</a> or go to the <a href="pricing.html">Booking &amp; Pricing page</a>.</p>
+    </main>
+
+    <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
         <a href="https://www.instagram.com/photofinishpro_timing/"
            target="_blank" rel="noopener noreferrer"
@@ -46,7 +77,21 @@
            aria-label="Email PhotoFinishPro Timing">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         </a>
+        <a href="https://www.youtube.com/@PhotoFinishProTiming"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="PhotoFinishPro Timing on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
-</footer>
+    </footer>
+
+    <script>
+        var calendarUrl = "https://calendar.google.com/calendar/embed?src=26fb2a09c082f4cda3c194bc1d7d50b3c4f8b67b3778ef7bd387764259e70b0a%40group.calendar.google.com&ctz=America%2FLos_Angeles";
+        if (window.matchMedia("(max-width: 600px)").matches) {
+            calendarUrl += "&mode=AGENDA";
+        }
+        document.getElementById("meet_calendar").src = calendarUrl;
+    </script>
 </body>
+</html>
