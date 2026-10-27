@@ -508,6 +508,14 @@ body {
   background-color: #111111;
 }
 
+/* Changelog: release cards in a single column */
+.releases {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Testimonials */
 .review {
   padding: 1rem;
