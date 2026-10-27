@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
     <link rel="stylesheet" href="styles.css">
     <title>How We Time</title>
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <script src="https://kit.fontawesome.com/58437b04cc.js" crossorigin="anonymous"></script>
-  </head>
-  <ul id="menu">
-  </ul>
-  <script src="pages.js"></script>
-  <body>
-    <h1>How We Time Meets:</h1>
-    <p>Meets are seeded through AthleticNET.</p>
-    <p>Coaches submit their athletes to AthleticNET.</p>
-    <p>We download the start lists from AthleticNET and put them into our custom timing software.</p>
-    <p>We select the event which imports the start list for that event into our photo review system.</p>
-    <p>The start trigger device picks up the volume from the starting gun. This sends a command to the photo review system to start the race.</p>
-    <p>Once runners get close to the finish chute, we start the capture on the line scan camera. This camera takes a lot of pictures of the finish line that are one pixel wide and arranges them by time, creating a photo finish picture.</p>
-    <p>These columns are timestamped, so when our timer reviews the photo finish image, they assign times to athletes crossing the line. They identify athletes based on a synced camera facing the athletes that read their bib numbers.</p>
-    <img src="sample_linescan.png" id="samplelinescan" style="display:block; margin: auto;">
-    <label for="samplelinescan">A sample photofinish image from an early version of our software.</label>
-    <p>The result is saved to a results file, and AthleticLIVE gets pinged with a new result.</p>
-  </body>
-      <footer class="site-footer">
+</head>
+<ul id="menu">
+</ul>
+<script src="pages.js"></script>
+
+<body>
+    <main class="page">
+        <h1>How We Time Meets:</h1>
+        <ol class="steps" role="list">
+            <li>Meets are seeded through AthleticNET.</li>
+            <li>Coaches submit their athletes to AthleticNET.</li>
+            <li>We download the start lists from AthleticNET and put them into our custom timing software.</li>
+            <li>We select the event which imports the start list for that event into our photo review system.</li>
+            <li>The start trigger device picks up the volume from the starting gun. This sends a command to the photo review system to start the race.</li>
+            <li>Once runners get close to the finish chute, we start the capture on the line scan camera. This camera takes a lot of pictures of the finish line that are one pixel wide and arranges them by time, creating a photo finish picture.</li>
+            <li>
+                These columns are timestamped, so when our timer reviews the photo finish image, they assign times to athletes crossing the line. They identify athletes based on a synced camera facing the athletes that read their bib numbers.
+                <figure class="step-figure">
+                    <a href="sample_linescan.png" target="_blank" rel="noopener noreferrer">
+                        <img src="sample_linescan.png" alt="Sample photo finish image from an early version of our software" loading="lazy">
+                    </a>
+                    <figcaption>A sample photofinish image from an early version of our software. Tap or click to view full size.</figcaption>
+                </figure>
+            </li>
+            <li>The result is saved to a results file, and AthleticLIVE gets pinged with a new result.</li>
+        </ol>
+    </main>
+
+    <footer class="site-footer">
       <nav class="social" aria-label="Social and contact links">
         <a href="https://www.instagram.com/photofinishpro_timing/"
            target="_blank" rel="noopener noreferrer"
@@ -34,7 +46,13 @@
            aria-label="Email PhotoFinishPro Timing">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         </a>
+        <a href="https://www.youtube.com/@PhotoFinishProTiming"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="PhotoFinishPro Timing on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
       </nav>
       <p>© 2026 PhotoFinishPro Timing. All rights reserved.</p>
-</footer>
+    </footer>
+</body>
 </html>
