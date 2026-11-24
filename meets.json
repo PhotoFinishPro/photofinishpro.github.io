@@ -1,6 +1,16 @@
 {
   "meets": [
     {
+      "name": "New Year's 5k",
+      "date": "2027-01-01",
+      "location": "TBD",
+      "description": "Starting out the year with a PB!",
+      "links": [
+        { "label": "AthleticNET & Registration", "url": "https://www.athletic.net/CrossCountry/meet/290469" },
+        { "label": "AthleticLIVE", "url": "https://live.athletic.net/meets/80636" }
+      ]
+    },
+    {
       "name": "Timer Training 3",
       "date": "2026-07-23",
       "location": "Local Track, TBD",
